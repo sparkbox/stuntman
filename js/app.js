@@ -2,7 +2,7 @@
 
   window.APP = {
     $testRunner: $($("#testRunner")[0].contentWindow.document),
-    framework: 'mocha',
+    framework: 'qunit',
     setRunner: function(runner) {
       return APP.framework = runner;
     },

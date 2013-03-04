@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QUnit</title>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="qunit.js"></script>
+  <script>   
+    function runTests( resultsContainer ) {
+      eval( localStorage[ "src" ] );
+      eval( localStorage[ "tests" ] );
+      
+      QUnit.done(function( details ) {
+        resultsContainer.innerHTML = "Total: " + details.total + " Failed: " + details.failed + " Passed: " + details.passed, " Runtime: " + details.runtime;
+      });
+    };
+  </script>
+</body>
+</html>

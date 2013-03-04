@@ -1,34 +1,24 @@
 window.APP =
   
   $testRunner: $( $( "#testRunner" )[0].contentWindow.document )
-  
-  setupTests: ->
-    APP.iframe = $( "#testRunner" )[0].contentWindow
-    
-    APP.jasmineEnv = APP.iframe.jasmine.getEnv()
-    APP.jasmineEnv.updateInterval = 1000
+  framework: 'mocha'
 
-    reporter = new APP.iframe.jasmine.TrivialReporter
-      location: window.document.location
-      body: $( "#results" )[0]
-
-    APP.jasmineEnv.addReporter reporter
+  setRunner: ( runner ) ->
+    APP.framework = runner
 
   runTests: ->
-    APP.setupTests()
-    APP.iframe.loadJS()
-    
+    APP.iframe = $( "#testRunner" )[0].contentWindow
+
     $( "#results" ).html( "" )
-    APP.jasmineEnv.execute()
+    APP.iframe.runTests( $( "#results" )[0] )
     
   loadTests: ->
-    $newFrame = $( "<iframe id=\"testRunner\" src=\"jasmine-runner.html\"></iframe>" ).load APP.runTests
-      
+    $newFrame = $( "<iframe id=\"testRunner\" src=\"/test-frameworks/#{APP.framework}/runner.html\"></iframe>" ).load APP.runTests
     $( "#testRunner" ).replaceWith( $newFrame )
-    # setTimeout APP.runTests, 500
-    
-  storeJS: ( name, editor )->
+  
+  codeChange: ( name, editor ) ->
     localStorage[name] = editor.getValue()
+    APP.loadTests()
 
   # Initializers
   common:
@@ -36,7 +26,8 @@ window.APP =
       cmOptions = 
         tabSize: 2
         theme: "monokai"
-        # lineNumbers: true
+        lineNumbers: true
+        
       tests = localStorage["tests"] || "describe('jsTesting', function() {\n  it(\"should pass\", function() {\n    expect( true ).toBe( true );\n  })\n});"
       src = localStorage["src"] || "function myScript(){return 100;}\n"
       
@@ -54,12 +45,14 @@ window.APP =
           value: src
         )
         
-      APP.testMirror.on "change", ( e ) ->
-        APP.storeJS( "tests", e )
+      APP.testMirror.on "change", ( editor ) ->
+        APP.codeChange "tests", editor
+      APP.srcMirror.on "change", ( editor ) ->
+        APP.codeChange "src", editor
+        
+      $( "#runner" ).on "change", ( e ) ->
+        APP.setRunner this.value
         APP.loadTests()
         
-      APP.srcMirror.on "change", ( e ) ->
-        APP.storeJS( "src", e )
-        APP.loadTests()
         
 $(document).ready UTIL.loadEvents

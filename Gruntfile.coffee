@@ -55,7 +55,6 @@ module.exports = (grunt) ->
           "dist/index.html": ["partials/_header.html", "partials/_home-page.html", "partials/_footer.html"]
           "dist/about.html": ["partials/_header.html", "partials/_about-page.html", "partials/_footer.html"]
           "dist/404.html": "partials/404.html"
-          "dist/jasmine-runner.html": "partials/jasmine-runner.html"
 
       js:
         #i.e. src: ["js/libs/mediaCheck.js", "js/app.js"],

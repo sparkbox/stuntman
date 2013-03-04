@@ -2,37 +2,31 @@
 
   window.APP = {
     $testRunner: $($("#testRunner")[0].contentWindow.document),
-    setupTests: function() {
-      var reporter;
-      APP.iframe = $("#testRunner")[0].contentWindow;
-      APP.jasmineEnv = APP.iframe.jasmine.getEnv();
-      APP.jasmineEnv.updateInterval = 1000;
-      reporter = new APP.iframe.jasmine.TrivialReporter({
-        location: window.document.location,
-        body: $("#results")[0]
-      });
-      return APP.jasmineEnv.addReporter(reporter);
+    framework: 'mocha',
+    setRunner: function(runner) {
+      return APP.framework = runner;
     },
     runTests: function() {
-      APP.setupTests();
-      APP.iframe.loadJS();
+      APP.iframe = $("#testRunner")[0].contentWindow;
       $("#results").html("");
-      return APP.jasmineEnv.execute();
+      return APP.iframe.runTests($("#results")[0]);
     },
     loadTests: function() {
       var $newFrame;
-      $newFrame = $("<iframe id=\"testRunner\" src=\"jasmine-runner.html\"></iframe>").load(APP.runTests);
+      $newFrame = $("<iframe id=\"testRunner\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
       return $("#testRunner").replaceWith($newFrame);
     },
-    storeJS: function(name, editor) {
-      return localStorage[name] = editor.getValue();
+    codeChange: function(name, editor) {
+      localStorage[name] = editor.getValue();
+      return APP.loadTests();
     },
     common: {
       init: function() {
         var cmOptions, src, tests;
         cmOptions = {
           tabSize: 2,
-          theme: "monokai"
+          theme: "monokai",
+          lineNumbers: true
         };
         tests = localStorage["tests"] || "describe('jsTesting', function() {\n  it(\"should pass\", function() {\n    expect( true ).toBe( true );\n  })\n});";
         src = localStorage["src"] || "function myScript(){return 100;}\n";
@@ -42,12 +36,14 @@
         APP.srcMirror = CodeMirror(document.getElementById("source"), $.extend({}, cmOptions, {
           value: src
         }));
-        APP.testMirror.on("change", function(e) {
-          APP.storeJS("tests", e);
-          return APP.loadTests();
+        APP.testMirror.on("change", function(editor) {
+          return APP.codeChange("tests", editor);
         });
-        return APP.srcMirror.on("change", function(e) {
-          APP.storeJS("src", e);
+        APP.srcMirror.on("change", function(editor) {
+          return APP.codeChange("src", editor);
+        });
+        return $("#runner").on("change", function(e) {
+          APP.setRunner(this.value);
           return APP.loadTests();
         });
       }

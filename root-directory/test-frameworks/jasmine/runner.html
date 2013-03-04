@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="/test-frameworks/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="/test-frameworks/jasmine/jasmine-html.js"></script>
+</head>
+
+<body>
+  <script>      
+    function runTests( resultsContainer ) {
+      eval( localStorage[ "src" ] );
+      eval( localStorage[ "tests" ] );
+    
+      jasmineEnv = jasmine.getEnv()
+      jasmineEnv.updateInterval = 1000
+
+      reporter = new jasmine.TrivialReporter({
+        location: window.document.location,
+        body: resultsContainer
+      });
+      
+      jasmineEnv.addReporter( reporter );
+      jasmineEnv.execute();
+    }
+  </script>
+</body>
+</html>

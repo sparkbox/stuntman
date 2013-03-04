@@ -1,0 +1,8 @@
+/* Windows Metro Snap mode fix */
+@-ms-viewport{
+  width: device-width;
+}
+
+iframe {
+  display: none;
+}

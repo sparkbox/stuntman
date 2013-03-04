@@ -1,21 +1,21 @@
 <html>
   <head>
     <title>Mocha</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="mocha.css" />
-
     <script src="mocha.js"></script>
-    <script>mocha.setup('bdd')</script>
     <script>
+      mocha.setup('bdd')
+
       function assert(expr, msg) {
         if (!expr) throw new Error(msg || 'failed');
       }
-    </script>
-    
-    <script>
+      
       function runTests( resultsContainer ) {
-        var runner = mocha.run(function( test ) {
-          // resultsContainer.innerHTML = test.fullTitle();
+        eval( localStorage[ "src" ] );
+        eval( localStorage[ "tests" ] );
+
+        var runner = mocha.run();
+        runner.on( "test end", function( test ) {
+          resultsContainer.innerHTML = document.getElementById( "mocha" ).innerHTML
         });
       };
     </script>

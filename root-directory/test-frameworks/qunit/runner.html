@@ -8,12 +8,40 @@
   <div id="qunit-fixture"></div>
   <script src="qunit.js"></script>
   <script>   
+    var transformed = {
+      stats: {},
+      passes: [],
+      failures: []
+    };
+
+    function logTest( details ) {
+      var test = {
+        title: details.message,
+        fullTitle: "",
+        err: {
+          msg: "",
+          stack: details.source
+        }
+      };
+    
+      if( details.result ) { // tests passed
+        transformed.passes.push( test );
+      } else {
+        transformed.failures.push( test );
+      }
+    }
+    
     function runTests( resultsContainer ) {
       eval( localStorage[ "src" ] );
       eval( localStorage[ "tests" ] );
       
+      QUnit.log( logTest );
       QUnit.done(function( details ) {
-        resultsContainer.innerHTML = "Total: " + details.total + " Failed: " + details.failed + " Passed: " + details.passed, " Runtime: " + details.runtime;
+        transformed.stats.tests = details.total;
+        transformed.stats.passes = details.passed;
+        transformed.stats.failures = details.failed;
+        transformed.stats.runtime = details.runtime;
+        parent.APP.showResults( transformed );
       });
     };
   </script>

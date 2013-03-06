@@ -3,9 +3,7 @@
   window.APP = {
     $testRunner: $($("#testRunner")[0].contentWindow.document),
     resultsTpl: Handlebars.compile($("#resultsTpl").html()),
-    framework: 'qunit',
     showResults: function(data) {
-      console.log(data);
       return $("#results").html(APP.resultsTpl(data));
     },
     setRunner: function(runner) {

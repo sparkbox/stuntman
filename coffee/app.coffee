@@ -2,10 +2,8 @@ window.APP =
   
   $testRunner: $( $( "#testRunner" )[0].contentWindow.document )
   resultsTpl: Handlebars.compile $( "#resultsTpl" ).html()
-  framework: 'qunit'
 
   showResults: ( data ) ->
-    console.log data
     $( "#results" ).html APP.resultsTpl( data )
  
   setRunner: ( runner ) ->

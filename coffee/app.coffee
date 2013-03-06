@@ -1,10 +1,16 @@
 window.APP =
   
   $testRunner: $( $( "#testRunner" )[0].contentWindow.document )
+  resultsTpl: Handlebars.compile $( "#resultsTpl" ).html()
   framework: 'qunit'
 
+  showResults: ( data ) ->
+    console.log data
+    $( "#results" ).html APP.resultsTpl( data )
+ 
   setRunner: ( runner ) ->
     APP.framework = runner
+    localStorage["runner"] = runner
 
   runTests: ->
     APP.iframe = $( "#testRunner" )[0].contentWindow
@@ -53,6 +59,9 @@ window.APP =
       $( "#runner" ).on "change", ( e ) ->
         APP.setRunner this.value
         APP.loadTests()
+      .val( localStorage[ "runner" ] ).change()
+        
+      APP.loadTests()
         
         
 $(document).ready UTIL.loadEvents

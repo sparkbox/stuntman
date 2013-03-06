@@ -2167,19 +2167,22 @@ function JSONReporter(runner) {
     passes.push(test);
   });
 
-  runner.on('fail', function(test){
+  runner.on('fail', function(test, err){
+    test.err = {
+      stack: err.stack,
+      msg: err.message
+    }
     failures.push(test);
   });
 
   runner.on('end', function(){
     var obj = {
         stats: self.stats
-      , tests: tests.map(clean)
       , failures: failures.map(clean)
       , passes: passes.map(clean)
     };
-
-    process.stdout.write(JSON.stringify(obj, null, 2));
+    //process.stdout.write(JSON.stringify(obj, null, 2));
+    parent.APP.showResults( obj );
   });
 }
 
@@ -2197,6 +2200,7 @@ function clean(test) {
       title: test.title
     , fullTitle: test.fullTitle()
     , duration: test.duration
+    , err: test.err
   }
 }
 }); // module: reporters/json.js

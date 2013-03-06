@@ -2,9 +2,16 @@
   <head>
     <title>Mocha</title>
     <script src="mocha.js"></script>
+    <script src="customJSONReporter.js"></script>
     <script>
-      mocha.setup('bdd')
-
+      // mocha.setup( 'bdd' );
+      mocha.setup({
+        ui: 'bdd',
+        reporter: function(runner) {
+          new mocha.reporters.JSON(runner);
+        }
+      });
+      
       function assert(expr, msg) {
         if (!expr) throw new Error(msg || 'failed');
       }
@@ -13,10 +20,11 @@
         eval( localStorage[ "src" ] );
         eval( localStorage[ "tests" ] );
 
-        var runner = mocha.run();
-        runner.on( "test end", function( test ) {
-          resultsContainer.innerHTML = document.getElementById( "mocha" ).innerHTML
-        });
+        mocha.run();
+        // var runner = mocha.run();
+        // runner.on( "end", function( test ) {
+        //   resultsContainer.innerHTML = document.getElementById( "mocha" ).innerHTML
+        // });
       };
     </script>
   </head>

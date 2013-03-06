@@ -2,9 +2,15 @@
 
   window.APP = {
     $testRunner: $($("#testRunner")[0].contentWindow.document),
+    resultsTpl: Handlebars.compile($("#resultsTpl").html()),
     framework: 'qunit',
+    showResults: function(data) {
+      console.log(data);
+      return $("#results").html(APP.resultsTpl(data));
+    },
     setRunner: function(runner) {
-      return APP.framework = runner;
+      APP.framework = runner;
+      return localStorage["runner"] = runner;
     },
     runTests: function() {
       APP.iframe = $("#testRunner")[0].contentWindow;
@@ -42,10 +48,11 @@
         APP.srcMirror.on("change", function(editor) {
           return APP.codeChange("src", editor);
         });
-        return $("#runner").on("change", function(e) {
+        $("#runner").on("change", function(e) {
           APP.setRunner(this.value);
           return APP.loadTests();
-        });
+        }).val(localStorage["runner"]).change();
+        return APP.loadTests();
       }
     }
   };

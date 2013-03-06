@@ -3,12 +3,68 @@
 <head>
   <title>Jasmine Spec Runner</title>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="/test-frameworks/jasmine/jasmine.js"></script>
-  <script type="text/javascript" src="/test-frameworks/jasmine/jasmine-html.js"></script>
+  <script src="jasmine.js"></script>
+  <script src="jasmine-html.js"></script>
 </head>
 
 <body>
-  <script>      
+  <script>
+    var transformed = {
+      stats: {
+        suites: 0,
+        tests: 0,
+        passes: 0,
+        failures: 0
+      },
+      passes: [],
+      failures: []
+    };
+  
+    function transformJSON( reporter ) {
+      return processTests( reporter, reporter.suites_ );
+    }
+    
+    function merge( result, test ) {
+      return {
+        title: test.name,
+        fullTitle: "",
+        err: {
+          msg: result.messages[0].trace.message,
+          stack: result.messages[0].trace.stack
+        }
+      }
+    }
+      
+    function processTests( reporter, suite ) {
+      var test, merged;
+      
+      for( var i in suite ) {
+        if( suite[ i ].type == 'suite' ) {
+          processTests( reporter, suite[ i ].children );
+          transformed.stats.suites++
+        } else {
+          test = reporter.results_[ suite[ i ].id ];
+          merged = merge( test, suite[ i ] );
+          transformed.stats.tests++
+          if( test.result === "passed" ) {
+            transformed.passes.push( merged );
+            transformed.stats.passes++
+          } else if( test.result === "failed" ) {
+            transformed.failures.push( merged );
+            transformed.stats.failures++
+          }
+        } 
+      }
+      return transformed;
+    }
+  
+    function returnResults() {
+      if( reporter.finished ) {
+        clearInterval( polling );        
+        parent.APP.showResults( transformJSON( reporter ) );
+      }
+    }  
+  
     function runTests( resultsContainer ) {
       eval( localStorage[ "src" ] );
       eval( localStorage[ "tests" ] );
@@ -16,13 +72,15 @@
       jasmineEnv = jasmine.getEnv()
       jasmineEnv.updateInterval = 1000
 
-      reporter = new jasmine.TrivialReporter({
-        location: window.document.location,
-        body: resultsContainer
-      });
+      // reporter = new jasmine.TrivialReporter({
+      //   body: document.getElementById( "results" );
+      // });
+      
+      reporter = new jasmine.JsApiReporter();
       
       jasmineEnv.addReporter( reporter );
       jasmineEnv.execute();
+      polling = setInterval( returnResults, 200);
     }
   </script>
 </body>

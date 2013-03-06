@@ -1,17 +1,44 @@
-<h1>JS Testing</h1>
+<header>
+  <h1>Test Your Code</h1>
 
-<select id="runner">
-  <option value="qunit">QUnit</option>
-  <option value="mocha">Mocha</option>
-  <option value="jasmine">Jasmine</option>
-</select>
+  <label>Test with: 
+    <select id="runner">
+      <option value="qunit">QUnit</option>
+      <option value="mocha">Mocha</option>
+      <option value="jasmine">Jasmine</option>
+    </select>
+  </label>
+</header>
 
-<h2>Tests</h2>
-<div id="tests" class="editor"></div>
+<div class="tests">
+  <h2>Tests</h2>
+  <div id="tests" class="editor"></div>
+</div>
 
-<h2>Source</h2>
-<div id="source" class="editor"></div>
+<div class="source">
+  <h2>Source</h2>
+  <div id="source" class="editor"></div>
+</div>
+
+<div class="results">
+  <h2>Results</h2>
+  <p id="results"></p>
+</div>
 
 <iframe id="testRunner"></iframe>
-<h2>Results</h2>
-<p id="results"></p>
+
+<script type="text/x-handlebars-template" id="resultsTpl">
+  <dl>
+    <dt>Total Tests:</dt>
+    <dd>{{stats.tests}}</dd>
+    <dt>Passed Tests:</dt>
+    <dd>{{stats.passes}}</dd>
+    <dt>Failed Tests:</dt>
+    <dd>{{stats.failures}}</dd>
+  </dl>
+  Failures:
+  {{#each failures}}
+    <h2>{{title}}</h2>
+    <p>{{err.stack}}</p>
+  {{/each}}
+</script>

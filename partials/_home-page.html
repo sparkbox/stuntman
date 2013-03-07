@@ -1,14 +1,22 @@
 <header>
   <h1>Test Your Code</h1>
 
-  <label>Test with: 
-    <select id="runner">
-      <option value="jasmine">Jasmine</option>
-      <option value="mocha">Mocha</option>
-      <option value="qunit">QUnit</option>
-    </select>
-  </label>
+  <form>
+    <label>Language:
+      <select id="language">
+        <option value="javascript">JavaScript</option>
+      </select>
+    </label>
+    
+    <label>Test Suite:
+      <select id="runner">
+        <option value="jasmine">Jasmine</option>
+      </select>
+    </label>
+  </form>
 </header>
+
+<div id="results" class="results"></div>
 
 <div class="tests">
   <h2>Tests</h2>
@@ -20,25 +28,31 @@
   <div id="source" class="editor"></div>
 </div>
 
-<div class="results">
-  <h2>Results</h2>
-  <p id="results"></p>
-</div>
-
-<iframe id="testRunner"></iframe>
+<iframe id="testRunner" class="hidden"></iframe>
 
 <script type="text/x-handlebars-template" id="resultsTpl">
-  <dl>
-    <dt>Total Tests:</dt>
-    <dd>{{stats.tests}}</dd>
-    <dt>Passed Tests:</dt>
-    <dd>{{stats.passes}}</dd>
-    <dt>Failed Tests:</dt>
-    <dd>{{stats.failures}}</dd>
-  </dl>
-  Failures:
+  <div class="passing-tests">
+    <span>Passing Tests:</span>
+    <output class="num-passes">{{stats.passes}}</output>
+    {{#resultGraphic stats.passes}}{{/resultGraphic}}
+  </div>
+  <div>
+    <span>Failing Tests:</span>
+    <output class="num-failures">{{stats.failures}}</output>
+    {{#resultGraphic stats.failures}}{{/resultGraphic}}
+  </div>
+  <ul>
   {{#each failures}}
-    <h2>{{title}}</h2>
-    <p>{{err.stack}}</p>
+    <li>
+      <h2>{{title}}</h2>
+      <p>{{err.msg}}</p>
+    </li>
   {{/each}}
+  </ul>
+</script>
+
+<script type="text/x-handlebars-template" id="testSuiteTpl">
+  {{#each suites}}
+    <option value="{{name}}">{{name}}</option>
+  {{#each}}
 </script>

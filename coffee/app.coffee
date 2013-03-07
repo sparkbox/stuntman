@@ -17,7 +17,7 @@ window.APP =
     APP.iframe.runTests( $( "#results" )[0] )
     
   loadTests: ->
-    $newFrame = $( "<iframe id=\"testRunner\" src=\"/test-frameworks/#{APP.framework}/runner.html\"></iframe>" ).load APP.runTests
+    $newFrame = $( "<iframe id=\"testRunner\" class=\"hidden\" src=\"/test-frameworks/#{APP.framework}/runner.html\"></iframe>" ).load APP.runTests
     $( "#testRunner" ).replaceWith( $newFrame )
   
   codeChange: ( name, editor ) ->
@@ -27,6 +27,15 @@ window.APP =
   # Initializers
   common:
     init: ->
+      Handlebars.registerHelper 'resultGraphic', ( count ) ->
+        out = "<output>"
+        for i in [1..count]
+          out += "◼ "
+          
+        out += "</output>"
+      
+      
+      
       cmOptions = 
         tabSize: 2
         theme: "monokai"
@@ -60,6 +69,10 @@ window.APP =
       .val( localStorage[ "runner" ] ).change()
         
       APP.loadTests()
-        
+      
+      $( window ).on "resize", ->
+        $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");
+        console.log( $( window ).height() - $( "#source" ).position().top + "px" );
+      .resize()
         
 $(document).ready UTIL.loadEvents

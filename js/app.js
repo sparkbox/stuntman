@@ -17,7 +17,7 @@
     },
     loadTests: function() {
       var $newFrame;
-      $newFrame = $("<iframe id=\"testRunner\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
+      $newFrame = $("<iframe id=\"testRunner\" class=\"hidden\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
       return $("#testRunner").replaceWith($newFrame);
     },
     codeChange: function(name, editor) {
@@ -27,6 +27,14 @@
     common: {
       init: function() {
         var cmOptions, src, tests;
+        Handlebars.registerHelper('resultGraphic', function(count) {
+          var i, out, _i;
+          out = "<output>";
+          for (i = _i = 1; 1 <= count ? _i <= count : _i >= count; i = 1 <= count ? ++_i : --_i) {
+            out += "◼ ";
+          }
+          return out += "</output>";
+        });
         cmOptions = {
           tabSize: 2,
           theme: "monokai",
@@ -50,7 +58,11 @@
           APP.setRunner(this.value);
           return APP.loadTests();
         }).val(localStorage["runner"]).change();
-        return APP.loadTests();
+        APP.loadTests();
+        return $(window).on("resize", function() {
+          $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
+          return console.log($(window).height() - $("#source").position().top + "px");
+        }).resize();
       }
     }
   };

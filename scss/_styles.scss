@@ -43,6 +43,7 @@ header {
 }
 
 .results {
+  @include rem( min-height, 2.4 );
   width: 100%;
   
   > div {

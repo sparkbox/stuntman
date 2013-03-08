@@ -1,7 +1,6 @@
 (function() {
 
   window.APP = {
-    $testRunner: $($("#testRunner")[0].contentWindow.document),
     resultsTpl: Handlebars.compile($("#resultsTpl").html()),
     showResults: function(data) {
       return $("#results").html(APP.resultsTpl(data));
@@ -11,9 +10,10 @@
       return localStorage["runner"] = runner;
     },
     runTests: function() {
+      var $results;
       APP.iframe = $("#testRunner")[0].contentWindow;
-      $("#results").html("");
-      return APP.iframe.runTests($("#results")[0]);
+      $results = $("#results");
+      return APP.iframe.runTests($results[0]);
     },
     loadTests: function() {
       var $newFrame;
@@ -24,30 +24,39 @@
       localStorage[name] = editor.getValue();
       return APP.loadTests();
     },
+    resultDisplayHelper: function(count) {
+      var i, out, _i;
+      out = "<output>";
+      if (count > 0) {
+        for (i = _i = 1; 1 <= count ? _i <= count : _i >= count; i = 1 <= count ? ++_i : --_i) {
+          out += "◼ ";
+        }
+      }
+      return out += "</output>";
+    },
+    setupCodeMirror: function() {
+      var cmOptions, src, tests;
+      cmOptions = {
+        tabSize: 2,
+        theme: "monokai",
+        lineNumbers: true
+      };
+      tests = localStorage["tests"] || "describe('jsTesting', function() {\n  it(\"should pass\", function() {\n    expect( true ).toBe( true );\n  })\n});";
+      src = localStorage["src"] || "function myScript(){return 100;}\n";
+      APP.testMirror = CodeMirror(document.getElementById("tests"), $.extend({}, cmOptions, {
+        value: tests
+      }));
+      return APP.srcMirror = CodeMirror(document.getElementById("source"), $.extend({}, cmOptions, {
+        value: src
+      }));
+    },
+    resizeEditors: function() {
+      return $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
+    },
     common: {
       init: function() {
-        var cmOptions, src, tests;
-        Handlebars.registerHelper('resultGraphic', function(count) {
-          var i, out, _i;
-          out = "<output>";
-          for (i = _i = 1; 1 <= count ? _i <= count : _i >= count; i = 1 <= count ? ++_i : --_i) {
-            out += "◼ ";
-          }
-          return out += "</output>";
-        });
-        cmOptions = {
-          tabSize: 2,
-          theme: "monokai",
-          lineNumbers: true
-        };
-        tests = localStorage["tests"] || "describe('jsTesting', function() {\n  it(\"should pass\", function() {\n    expect( true ).toBe( true );\n  })\n});";
-        src = localStorage["src"] || "function myScript(){return 100;}\n";
-        APP.testMirror = CodeMirror(document.getElementById("tests"), $.extend({}, cmOptions, {
-          value: tests
-        }));
-        APP.srcMirror = CodeMirror(document.getElementById("source"), $.extend({}, cmOptions, {
-          value: src
-        }));
+        APP.setupCodeMirror();
+        Handlebars.registerHelper('resultGraphic', APP.resultDisplayHelper);
         APP.testMirror.on("change", function(editor) {
           return APP.codeChange("tests", editor);
         });
@@ -59,10 +68,7 @@
           return APP.loadTests();
         }).val(localStorage["runner"]).change();
         APP.loadTests();
-        return $(window).on("resize", function() {
-          $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
-          return console.log($(window).height() - $("#source").position().top + "px");
-        }).resize();
+        return $(window).on("resize", APP.resizeEditors).resize();
       }
     }
   };

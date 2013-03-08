@@ -20,12 +20,8 @@ module.exports = (grunt) ->
         tasks: "partials"
 
       javascript:
-        files: ["coffee/*", "js/libs/*.js"]
+        files: ["coffee/*", "js/libs/*.js", "specs/*.coffee"]
         tasks: "javascript"
-
-      jsTesting:
-        files: ["src/**/*.js", "specs/**/*.js"]
-        tasks: "jasmine"
 
       rootDirectory:
         files: [ "root-directory/**/*", "root-directory/.*" ]
@@ -59,7 +55,6 @@ module.exports = (grunt) ->
       js:
         #i.e. src: ["js/libs/mediaCheck.js", "js/app.js"],
         src: ["js/libs/*.js", "js/libs/cm-modes/**/*.js", "js/app.js"]
-        #change this to a site specific name i.e. uwg.js or dty.js
         dest: "dist/js/<%= pkg.name %>.js"
 
     modernizr:
@@ -111,6 +106,7 @@ module.exports = (grunt) ->
     jasmine:
       src: "dist/**/*.js"
       options:
+        template: "specs/runner-templates/test-runner.tmpl"
         specs: "specs/js/*Spec.js"
         helpers: "specs/js/*Helper.js"
         vendor: ["js/libs/jquery-1.9.0.min.js", "specs/lib/*.js"]
@@ -130,7 +126,7 @@ module.exports = (grunt) ->
   grunt.registerTask "partials", [ "clean:partials", "concat:partials" ]
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "javascript", [ "clean:javascript", "coffee", "concat:js" ] # , "jasmine"
+  grunt.registerTask "javascript", [ "clean:javascript", "coffee", "concat:js" ] #, "jasmine"
 
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", ["clean:stylesheets", "compass"]

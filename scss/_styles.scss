@@ -66,21 +66,17 @@ header {
     font-weight: bold;
     
     &+output {
-      @include rem( font-size, .6 );
+      @include rem( font-size, .1 );
       @include rem( padding-top, .4 );
       @include rem( padding-left, 5.8 );
       @include rem( min-height, 2.3 );
+      letter-spacing: -.3em;
+      line-height: 0.7em;
       margin-left: 5px;
       position: absolute;
       width: 100%;
       right: 0;
     }
-    
-    // @include breakpoint( 40em ) {
-    //   &+output {
-    //     width: 32%;
-    //   }
-    // }
   }
   
   .num-failures {

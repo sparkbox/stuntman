@@ -54,7 +54,7 @@ window.APP =
       )
 
   resizeEditors: ->
-    $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");  
+    $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");
   
   # Initializers
   common:

@@ -1,9 +1,11 @@
 (function() {
 
   window.APP = {
-    resultsTpl: Handlebars.compile($("#resultsTpl").html()),
     showResults: function(data) {
-      return $("#results").html(APP.resultsTpl(data));
+      var $results;
+      $results = $("#results");
+      $results.html(APP.resultsTpl(data));
+      return $results.find("ul").toggleClass("show-more", data.failures.length > 1);
     },
     setRunner: function(runner) {
       APP.framework = runner;
@@ -17,11 +19,26 @@
     },
     loadTests: function() {
       var $newFrame;
-      $newFrame = $("<iframe id=\"testRunner\" class=\"hidden\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
-      return $("#testRunner").replaceWith($newFrame);
+      if (!APP.error) {
+        $newFrame = $("<iframe id=\"testRunner\" class=\"hidden\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
+        return $("#testRunner").replaceWith($newFrame);
+      }
+    },
+    codeToJS: function(code) {
+      if (APP.testMirror.getMode().name === "coffeescript") {
+        try {
+          code = CoffeeScript.compile(code);
+          APP.error = false;
+        } catch (e) {
+          $("#results").html(APP.editorErrorTpl(e));
+          APP.error = true;
+        }
+      }
+      return code;
     },
     codeChange: function(name, editor) {
       localStorage[name] = editor.getValue();
+      localStorage[name + "-modified"] = APP.codeToJS(editor.getValue(), editor.getMode().name);
       return APP.loadTests();
     },
     resultDisplayHelper: function(count) {
@@ -53,20 +70,32 @@
     resizeEditors: function() {
       return $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
     },
+    setEditorModes: function() {
+      APP.testMirror.setOption("mode", this.value);
+      APP.srcMirror.setOption("mode", this.value);
+      return APP.codeChange("tests", APP.testMirror);
+    },
+    bindEvents: function() {
+      $("#language").on("change", APP.setEditorModes).change();
+      $("#runner").on("change", function(e) {
+        APP.setRunner(this.value);
+        return APP.loadTests();
+      }).val(localStorage["runner"]).change();
+      APP.testMirror.on("change", function(editor) {
+        return APP.codeChange("tests", editor);
+      });
+      return APP.srcMirror.on("change", function(editor) {
+        return APP.codeChange("src", editor);
+      });
+    },
     common: {
       init: function() {
+        APP.error = false;
+        APP.resultsTpl = Handlebars.compile($("#resultsTpl").html());
+        APP.editorErrorTpl = Handlebars.compile($("#editorErrorTpl").html());
         APP.setupCodeMirror();
+        APP.bindEvents();
         Handlebars.registerHelper('resultGraphic', APP.resultDisplayHelper);
-        APP.testMirror.on("change", function(editor) {
-          return APP.codeChange("tests", editor);
-        });
-        APP.srcMirror.on("change", function(editor) {
-          return APP.codeChange("src", editor);
-        });
-        $("#runner").on("change", function(e) {
-          APP.setRunner(this.value);
-          return APP.loadTests();
-        }).val(localStorage["runner"]).change();
         APP.loadTests();
         return $(window).on("resize", APP.resizeEditors).resize();
       }

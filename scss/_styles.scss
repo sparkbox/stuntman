@@ -102,6 +102,42 @@ header {
     max-height: 2rem;
     margin: 0;
     overflow: hidden;
+    position: relative;
+    padding-left: 10px;
+    
+    li {
+      padding: 0 10px 10px;
+    }
+    
+    &.show-more {
+    
+      &:before {
+        content: "⬇";
+        color: $failed;
+        position: absolute;
+        left: 0;
+        @include rem( top, .5 );
+      }
+    
+      &:hover {
+        display: block;
+        overflow: visible;
+        position: relative;
+        z-index: 10;
+        
+        li {
+          background: $results-background;
+          
+          &:last-child {
+            border-radius: 0 0 5px 5px;
+          }
+        }
+        
+        &:before {
+          content: "⬆";
+        }
+      }
+    }
   }
   
   h2 {

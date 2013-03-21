@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  
+  - if (!everyauth.loggedIn)
+    #github-login
+    a(href='/auth/github', style='border: 0px')
+      img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+        
+  = everyauth.loggedIn

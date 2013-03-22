@@ -1,10 +1,75 @@
-extends layout
-
-block content
+//- extends layout
   
-  - if (!everyauth.loggedIn)
-    #github-login
-    a(href='/auth/github', style='border: 0px')
-      img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+doctype 5
+html
+  head
+    title title
+    link(rel='stylesheet', href='css/mq.css')
+  body    
+    //- block content
+      
+    header
+      h1 Test Your Code
+      form
+        label
+          | Language:
+          select#language
+            option(value='coffeescript') CoffeeScript
+            option(value='javascript') JavaScript
+        label
+          | Test Suite:
+          select#runner
+            option(value='jasmine') Jasmine
+            option(value='mocha') Mocha
+            option(value='qunit') QUnit
+            
+      - if (!everyauth.loggedIn)
+        #github-login
+        a(href='/auth/github', style='border: 0px')
+          img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+      
+      - else
+        p
+          | Logged in as 
+          = everyauth.github.user.login
+          
+        a(href='https://api.github.com/users/robtarr/gists') See Gists
         
-  = everyauth.loggedIn
+    div#results.results
+    div.tests
+      h2 Tests
+      div#tests.editor
+    div.source
+      h2 Source
+      div#source.editor
+    iframe#testRunner.hidden
+    script#resultsTpl(type='text/x-handlebars-template')
+      | <div>
+      | <span>Passing Tests:</span>
+      | <output class="num-passes">{{stats.passes}}</output>
+      | {{#resultGraphic stats.passes}}{{/resultGraphic}}
+      | </div>
+      | <div>
+      | <span>Failing Tests:</span>
+      | <output class="num-failures">{{stats.failures}}</output>
+      | {{#resultGraphic stats.failures}}{{/resultGraphic}}
+      | </div>
+      | <ul>
+      | {{#each failures}}
+      | <li>
+      | <h2>{{title}}</h2>
+      | <p>{{err.msg}}</p>
+      | </li>
+      | {{/each}}
+      | </ul>
+    script#editorErrorTpl(type='text/x-handlebars-template')
+      | <p>
+      | <span>{{name}}</span>
+      | {{message}}
+      | </p>
+    script#testSuiteTpl(type='text/x-handlebars-template')
+      | {{#each suites}}
+      | <option value="{{name}}">{{name}}</option>
+      | {{#each}}
+      
+    script(src="js/testAllTheThings.js")

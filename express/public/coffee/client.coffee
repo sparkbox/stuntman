@@ -82,21 +82,33 @@ window.APP =
     # APP.codeChange "src", APP.srcMirror
   
   saveGist: ->
-    newGist =
-      public: true
-      files:
-        "test.js":
-          "content": APP.testMirror.getValue()
-        "source.js":
-          "content": APP.srcMirror.getValue()
-    
-    $.ajax
-      url: "/creategist"
-      data: newGist
-      type: 'POST'
-      success: ->
-        alert "Gist saved."
+    smoke.prompt "Please give a brief description:", ( desc ) ->
+      newGist =
+        description: desc
+        public: true
+        files:
+          "test.js":
+            "content": APP.testMirror.getValue()
+          "source.js":
+            "content": APP.srcMirror.getValue()
+      
+      $.ajax
+        url: "/creategist"
+        data: newGist
+        type: 'POST'
+        success: ->
+          alert "Gist saved."
 
+  loadGist: ( id ) ->
+    $.ajax
+      url: "https://api.github.com/gists/#{id}"
+      success: ( data ) ->
+        APP.testMirror.setValue( data.files[ "test.js" ].content )
+        APP.srcMirror.setValue( data.files[ "source.js" ].content )
+  
+  getGist: ->
+    smoke.prompt "Enter a Gist ID:", ( id ) ->
+      APP.loadGist id
   
   bindEvents: ->
     $( "#language" ).on( "change", APP.setEditorModes ).change()
@@ -108,6 +120,8 @@ window.APP =
     
     $( "#save-gist" ).on "click", ->
       APP.saveGist()
+    $( "#load-gist" ).on "click", ( e ) ->
+      APP.getGist()
     
     APP.testMirror.on "change", ( editor ) ->
       APP.codeChange "tests", editor
@@ -121,6 +135,7 @@ window.APP =
       
       APP.resultsTpl = Handlebars.compile $( "#resultsTpl" ).html()
       APP.editorErrorTpl = Handlebars.compile $( "#editorErrorTpl" ).html()
+      APP.gistsTpl = Handlebars.compile $( "#gistsTpl" ).html()
 
       APP.setupCodeMirror()
       APP.bindEvents()

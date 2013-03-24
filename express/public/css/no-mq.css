@@ -383,6 +383,194 @@ table {
   border-spacing: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\000031}}
+.smoke-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition: all .3s;
+  -webkit-transition: opacity .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000315}}
+.smoke-base.smoke-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000320}}
+.smokebg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000328}}
+.smoke-base .dialog {
+  position: absolute;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000332}}
+.dialog-prompt {
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000337}}
+.dialog-buttons {
+  margin: 10px 0 5px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000341}}
+.smoke {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000349}}
+.dialog-buttons button {
+  display: inline-block;
+  vertical-align: baseline;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  margin: 0 5px;
+  -webkit-background-clip: padding-box;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: bold;
+  padding: 9px 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000366}}
+.dialog-prompt input {
+  margin: 0;
+  border: 0;
+  font-family: sans-serif;
+  outline: none;
+  border: 1px solid #333;
+  width: 97%;
+  background-color: #fff;
+  font-size: 15px;
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000378}}
+.smoke-base {
+  background: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#90000000,endColorstr=#900000000);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000383}}
+.smoke-base .dialog {
+  top: 25%;
+  left: 25%;
+  width: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000389}}
+.smoke-base .dialog-inner {
+  padding: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000393}}
+.smoke {
+  text-transform: uppercase;
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#ffffff);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\0000399}}
+.dialog-buttons button {
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#222222,endColorstr=#222222);
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\00003107}}
+button.cancel {
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#444444,endColorstr=#444444);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke\.scss}line{font-family:\00003112}}
+.queue {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\000031}}
+.smoke-base {
+  background: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\000035}}
+.smoke-base .dialog {
+  top: 25%;
+  left: 30%;
+  width: 40%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000311}}
+.smoke-base .dialog-inner {
+  padding: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000315}}
+.smoke {
+  text-transform: none;
+  color: #eee;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  border: 1px solid #333;
+  font-size: 24px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000324}}
+.dialog-buttons {
+  margin: 5px 0 5px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000328}}
+.dialog-buttons button {
+  border-radius: 3px;
+  text-transform: uppercase;
+  background-color: #ebebeb;
+  color: #333;
+  font-size: 11px;
+  padding: 6px 9px;
+  border: 1px solid #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000338}}
+button.cancel {
+  background-color: #999;
+  color: #222222;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_smoke-dark\.scss}line{font-family:\0000343}}
+.dialog-prompt input {
+  width: 300px;
+  text-align: center;
+  background-color: #ccc;
+}
+
 /* BASICS */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/express\/public\/scss\/_codemirror\.scss}line{font-family:\000033}}
 .CodeMirror {

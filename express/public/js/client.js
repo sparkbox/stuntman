@@ -76,25 +76,42 @@
       return APP.codeChange("tests", APP.testMirror);
     },
     saveGist: function() {
-      var newGist;
-      newGist = {
-        "public": true,
-        files: {
-          "test.js": {
-            "content": APP.testMirror.getValue()
-          },
-          "source.js": {
-            "content": APP.srcMirror.getValue()
+      return smoke.prompt("Please give a brief description:", function(desc) {
+        var newGist;
+        newGist = {
+          description: desc,
+          "public": true,
+          files: {
+            "test.js": {
+              "content": APP.testMirror.getValue()
+            },
+            "source.js": {
+              "content": APP.srcMirror.getValue()
+            }
           }
-        }
-      };
+        };
+        return $.ajax({
+          url: "/creategist",
+          data: newGist,
+          type: 'POST',
+          success: function() {
+            return alert("Gist saved.");
+          }
+        });
+      });
+    },
+    loadGist: function(id) {
       return $.ajax({
-        url: "/creategist",
-        data: newGist,
-        type: 'POST',
-        success: function() {
-          return alert("Gist saved.");
+        url: "https://api.github.com/gists/" + id,
+        success: function(data) {
+          APP.testMirror.setValue(data.files["test.js"].content);
+          return APP.srcMirror.setValue(data.files["source.js"].content);
         }
+      });
+    },
+    getGist: function() {
+      return smoke.prompt("Enter a Gist ID:", function(id) {
+        return APP.loadGist(id);
       });
     },
     bindEvents: function() {
@@ -105,6 +122,9 @@
       }).val(localStorage["runner"]).change();
       $("#save-gist").on("click", function() {
         return APP.saveGist();
+      });
+      $("#load-gist").on("click", function(e) {
+        return APP.getGist();
       });
       APP.testMirror.on("change", function(editor) {
         return APP.codeChange("tests", editor);
@@ -118,6 +138,7 @@
         APP.error = false;
         APP.resultsTpl = Handlebars.compile($("#resultsTpl").html());
         APP.editorErrorTpl = Handlebars.compile($("#editorErrorTpl").html());
+        APP.gistsTpl = Handlebars.compile($("#gistsTpl").html());
         APP.setupCodeMirror();
         APP.bindEvents();
         Handlebars.registerHelper('resultGraphic', APP.resultDisplayHelper);

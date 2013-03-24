@@ -34,7 +34,7 @@ html
         - else
           button#save-gist
             ⬆
-          button#load-gist
+          button#load-gist(data-name='#{everyauth.github.user.login}')
             ⬇
           img.avatar(style='border: 0px', src='#{everyauth.github.user.avatar_url}')
             
@@ -50,31 +50,36 @@ html
     iframe#testRunner.hidden
     script#resultsTpl(type='text/x-handlebars-template')
       | <div>
-      | <span>Passing Tests:</span>
-      | <output class="num-passes">{{stats.passes}}</output>
-      | {{#resultGraphic stats.passes}}{{/resultGraphic}}
+      |   <span>Passing Tests:</span>
+      |   <output class="num-passes">{{stats.passes}}</output>
+      |   {{#resultGraphic stats.passes}}{{/resultGraphic}}
       | </div>
       | <div>
-      | <span>Failing Tests:</span>
-      | <output class="num-failures">{{stats.failures}}</output>
-      | {{#resultGraphic stats.failures}}{{/resultGraphic}}
+      |   <span>Failing Tests:</span>
+      |   <output class="num-failures">{{stats.failures}}</output>
+      |   {{#resultGraphic stats.failures}}{{/resultGraphic}}
       | </div>
       | <ul>
-      | {{#each failures}}
-      | <li>
-      | <h2>{{title}}</h2>
-      | <p>{{err.msg}}</p>
-      | </li>
-      | {{/each}}
+      |   {{#each failures}}
+      |     <li>
+      |       <h2>{{title}}</h2>
+      |       <p>{{err.msg}}</p>
+      |     </li>
+      |   {{/each}}
       | </ul>
     script#editorErrorTpl(type='text/x-handlebars-template')
       | <p>
-      | <span>{{name}}</span>
-      | {{message}}
+      |   <span>{{name}}</span>
+      |   {{message}}
       | </p>
     script#testSuiteTpl(type='text/x-handlebars-template')
       | {{#each suites}}
-      | <option value="{{name}}">{{name}}</option>
-      | {{#each}}
-      
+      |   <option value="{{name}}">{{name}}</option>
+      | {{/each}}
+    script#gistsTpl(type='text/x-handlebars-template')
+      | <ul>
+      |   {{#each .}}
+      |     <li><a href="{{url}}">{{description}}</a></li>
+      |   {{/each}}
+      | </ul>
     script(src="js/testAllTheThings.js")

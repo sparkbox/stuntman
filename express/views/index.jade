@@ -32,9 +32,9 @@ html
             img.avatar(style='border: 0px', src='#{pageData.cat}')
         
         - else
-          button#save-gist
+          button#save-gist(title="Save Gist")
             ⬆
-          button#load-gist(data-name='#{everyauth.github.user.login}')
+          button#load-gist(data-name='#{everyauth.github.user.login}', title="Load Gist")
             ⬇
           img.avatar(style='border: 0px', src='#{everyauth.github.user.avatar_url}')
                   

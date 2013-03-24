@@ -45,6 +45,15 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+    
+    button {
+      -webkit-appearance: none;
+      background: none;
+      border: none;
+      color: $gist-controls-text;
+      top: -0.7rem;
+      position: relative;
+    }
   }
   .avatar {
     @include rem( height, 2.3 );

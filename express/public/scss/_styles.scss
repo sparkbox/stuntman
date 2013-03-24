@@ -40,6 +40,13 @@ header {
       left: 5px;
     }
   }
+  
+  .github {
+    @include rem( height, 2.3 );
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .results {

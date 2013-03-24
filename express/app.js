@@ -8,7 +8,8 @@ var express = require('express'),
     user = require('./routes/user'),
     github = require('./routes/github'),
     everyauth = require('everyauth'),
-    conf = require('./conf');
+    conf = require('./conf'),
+    cat = require('./octodex');
 
 var app = express();
 var usersById = {};
@@ -60,7 +61,9 @@ app.configure(function(){
 })
 
 app.get('/', function (req, res) {
-  res.render('index');
+  cat.octodex( function( randocat ) {
+    res.render('index', { pageData: { cat: randocat } } );  
+  });
 });
 
 app.listen(3030);

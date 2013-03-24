@@ -10,6 +10,7 @@ html
       
     header
       h1 Test Your Code
+      #{pageData.cat}
       form
         label
           | Language:
@@ -26,7 +27,8 @@ html
       - if (!everyauth.loggedIn)
         #github-login
         a(href='/auth/github', style='border: 0px')
-          img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+          //- img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+          img.github(style='border: 0px', src='#{pageData.cat}')
       
       - else
         p

@@ -81,6 +81,23 @@ window.APP =
     APP.codeChange "tests", APP.testMirror
     # APP.codeChange "src", APP.srcMirror
   
+  saveGist: ->
+    newGist =
+      public: true
+      files:
+        "test.js":
+          "content": APP.testMirror.getValue()
+        "source.js":
+          "content": APP.srcMirror.getValue()
+    
+    $.ajax
+      url: "/creategist"
+      data: newGist
+      type: 'POST'
+      success: ->
+        alert "Gist saved."
+
+  
   bindEvents: ->
     $( "#language" ).on( "change", APP.setEditorModes ).change()
       
@@ -88,6 +105,9 @@ window.APP =
       APP.setRunner this.value
       APP.loadTests()
     .val( localStorage[ "runner" ] ).change()
+    
+    $( "#save-gist" ).on "click", ->
+      APP.saveGist()
     
     APP.testMirror.on "change", ( editor ) ->
       APP.codeChange "tests", editor

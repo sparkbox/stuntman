@@ -41,11 +41,13 @@ header {
     }
   }
   
-  .github {
-    @include rem( height, 2.3 );
+  .github-controls {
     position: absolute;
     right: 0;
     top: 0;
+  }
+  .avatar {
+    @include rem( height, 2.3 );
   }
 }
 

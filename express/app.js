@@ -7,6 +7,7 @@ var express = require('express'),
     routes = require('./routes'),
     user = require('./routes/user'),
     github = require('./routes/github'),
+    https = require('https'),
     everyauth = require('everyauth'),
     conf = require('./conf'),
     cat = require('./octodex');
@@ -29,12 +30,13 @@ everyauth.github
   .scope('gist')
   .findOrCreateUser( function (sess, accessToken, accessTokenExtra, ghUser) {
       console.log( "find user" );
+      console.log( "Token: " + accessToken );
       console.log(ghUser);
-      return usersByGhId[ghUser.id] || (usersByGhId[ghUser.id] = addUser('github', ghUser));
+      return usersByGhId[ghUser.id] || (usersByGhId[ghUser.id] = addUser('github', ghUser, accessToken));
   })
   .redirectPath('/');
 
-function addUser (source, sourceUser) {
+function addUser (source, sourceUser, token) {
   var user;
   if (arguments.length === 1) { // password-based
     user = sourceUser = source;
@@ -43,8 +45,39 @@ function addUser (source, sourceUser) {
   } else { // non-password-based
     user = usersById[++nextUserId] = {id: nextUserId};
     user[source] = sourceUser;
+    user['token'] = token;
   }
   return user;
+}
+
+function createGist( req ) {
+  console.log( "Github Users:" );
+  console.log( usersByGhId );
+  req.body.user = "robtarr"
+  req.body.access_token = usersByGhId['robtarr'].token
+  console.log( req.body );
+  var data = JSON.stringify( req.body ),
+      opts = {
+        host: "api.github.com",
+        path: "/gists",
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': data.length
+        }
+      },
+      
+      post_req = https.request( opts, function( res ) {
+        res.setEncoding('utf8');
+        res.on( 'data', function ( chunk ) {
+          console.log( 'Response: ' + chunk) ;
+        });
+      });
+
+  // post the data
+
+  // post_req.write( data );
+  // post_req.end();
 }
 
 app.configure(function(){
@@ -64,6 +97,11 @@ app.get('/', function (req, res) {
   cat.octodex( function( randocat ) {
     res.render('index', { pageData: { cat: randocat } } );  
   });
+});
+
+app.post( '/creategist', function (req, res) {
+  // console.log( everyauth.github.oauth );
+  createGist( req )
 });
 
 app.listen(3030);

@@ -24,18 +24,21 @@ html
             option(value='mocha') Mocha
             option(value='qunit') QUnit
             
-      - if (!everyauth.loggedIn)
-        #github-login
-        a(href='/auth/github', style='border: 0px')
-          //- img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
-          img.github(style='border: 0px', src='#{pageData.cat}')
-      
-      - else
-        p
-          | Logged in as 
-          = everyauth.github.user.login
-          
-        a(href='https://api.github.com/users/robtarr/gists') See Gists
+      .github-controls
+        - if (!everyauth.loggedIn)
+          #github-login
+          a(href='/auth/github', style='border: 0px')
+            //- img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+            img.avatar(style='border: 0px', src='#{pageData.cat}')
+        
+        - else
+          button#save-gist
+            ⬆
+          button#load-gist
+            ⬇
+          img.avatar(style='border: 0px', src='#{everyauth.github.user.avatar_url}')
+            
+          a(href='https://api.github.com/users/robtarr/gists') See Gists
         
     div#results.results
     div.tests

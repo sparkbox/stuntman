@@ -9907,10 +9907,10 @@ CodeMirror.defineMIME("text/x-ruby", "ruby");
 
 
 (function() {
+
   window.APP = {
     showResults: function(data) {
       var $results;
-
       $results = $("#results");
       $results.html(APP.resultsTpl(data));
       return $results.find("ul").toggleClass("show-more", data.failures.length > 1);
@@ -9921,28 +9921,23 @@ CodeMirror.defineMIME("text/x-ruby", "ruby");
     },
     runTests: function() {
       var $results;
-
       APP.iframe = $("#testRunner")[0].contentWindow;
       $results = $("#results");
       return APP.iframe.runTests($results[0]);
     },
     loadTests: function() {
       var $newFrame;
-
       if (!APP.error) {
         $newFrame = $("<iframe id=\"testRunner\" class=\"hidden\" src=\"/test-frameworks/" + APP.framework + "/runner.html\"></iframe>").load(APP.runTests);
         return $("#testRunner").replaceWith($newFrame);
       }
     },
     codeToJS: function(code) {
-      var e;
-
       if (APP.testMirror.getMode().name === "coffeescript") {
         try {
           code = CoffeeScript.compile(code);
           APP.error = false;
-        } catch (_error) {
-          e = _error;
+        } catch (e) {
           $("#results").html(APP.editorErrorTpl(e));
           APP.error = true;
         }
@@ -9956,7 +9951,6 @@ CodeMirror.defineMIME("text/x-ruby", "ruby");
     },
     resultDisplayHelper: function(count) {
       var i, out, _i;
-
       out = "<output>";
       if (count > 0) {
         for (i = _i = 1; 1 <= count ? _i <= count : _i >= count; i = 1 <= count ? ++_i : --_i) {
@@ -9967,7 +9961,6 @@ CodeMirror.defineMIME("text/x-ruby", "ruby");
     },
     setupCodeMirror: function() {
       var cmOptions, src, tests;
-
       cmOptions = {
         tabSize: 2,
         theme: "monokai",
@@ -9990,12 +9983,37 @@ CodeMirror.defineMIME("text/x-ruby", "ruby");
       APP.srcMirror.setOption("mode", this.value);
       return APP.codeChange("tests", APP.testMirror);
     },
+    saveGist: function() {
+      var newGist;
+      newGist = {
+        "public": true,
+        files: {
+          "test.js": {
+            "content": APP.testMirror.getValue()
+          },
+          "source.js": {
+            "content": APP.srcMirror.getValue()
+          }
+        }
+      };
+      return $.ajax({
+        url: "/creategist",
+        data: newGist,
+        type: 'POST',
+        success: function() {
+          return alert("Gist saved.");
+        }
+      });
+    },
     bindEvents: function() {
       $("#language").on("change", APP.setEditorModes).change();
       $("#runner").on("change", function(e) {
         APP.setRunner(this.value);
         return APP.loadTests();
       }).val(localStorage["runner"]).change();
+      $("#save-gist").on("click", function() {
+        return APP.saveGist();
+      });
       APP.testMirror.on("change", function(editor) {
         return APP.codeChange("tests", editor);
       });

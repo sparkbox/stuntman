@@ -13,8 +13,7 @@
     "everyauth": "git://github.com/bnoguchi/everyauth.git#express3",
     "hiredis": "~0.1.15",
     "connect-redis": "~1.4.5",
-    "connect": "~2.7.3",
-    "octodex": "~0.1.0"
+    "connect": "~2.7.3"
   },
   "devDependencies": {
     "node-jade-compress": "0.0.15",

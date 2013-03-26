@@ -67,8 +67,12 @@
     }  
   
     function runTests( resultsContainer ) {
-      eval( localStorage[ "src-modified" ] );
-      eval( localStorage[ "tests-modified" ] );
+      try {
+        eval( localStorage[ "src-modified" ] );
+        eval( localStorage[ "tests-modified" ] );
+      } catch ( e ) {
+        
+      }
     
       jasmineEnv = jasmine.getEnv()
       jasmineEnv.updateInterval = 1000

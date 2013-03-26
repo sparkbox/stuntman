@@ -75,21 +75,25 @@
       APP.srcMirror.setOption("mode", this.value);
       return APP.codeChange("tests", APP.testMirror);
     },
+    fileExtension: function() {
+      if (APP.testMirror.getMode().name === "coffeescript") {
+        return "coffee";
+      } else {
+        return "js";
+      }
+    },
     saveGist: function() {
       return smoke.prompt("Please give a brief description:", function(desc) {
-        var newGist;
+        var files, newGist;
+        files = {};
+        files["test." + (APP.fileExtension())] = APP.testMirror.getValue();
+        files["source." + (APP.fileExtension())] = APP.srcMirror.getValue();
         newGist = {
           description: desc,
           "public": true,
-          files: {
-            "test.js": {
-              "content": APP.testMirror.getValue()
-            },
-            "source.js": {
-              "content": APP.srcMirror.getValue()
-            }
-          }
+          files: files
         };
+        console.log(newGist);
         return $.ajax({
           url: "/creategist",
           data: newGist,
@@ -104,8 +108,10 @@
       return $.ajax({
         url: "https://api.github.com/gists/" + id,
         success: function(data) {
-          APP.testMirror.setValue(data.files["test.js"].content);
-          return APP.srcMirror.setValue(data.files["source.js"].content);
+          var fileExtension;
+          fileExtension = data.files["test.coffee"] ? "coffee" : "js";
+          APP.testMirror.setValue(data.files["test." + fileExtension].content);
+          return APP.srcMirror.setValue(data.files["source." + fileExtension].content);
         }
       });
     },

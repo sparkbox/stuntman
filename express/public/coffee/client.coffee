@@ -81,16 +81,20 @@ window.APP =
     APP.codeChange "tests", APP.testMirror
     # APP.codeChange "src", APP.srcMirror
   
+  fileExtension: ->
+    if APP.testMirror.getMode().name is "coffeescript" then "coffee" else "js"
+  
   saveGist: ->
     smoke.prompt "Please give a brief description:", ( desc ) ->
+      files = {}
+      files["test.#{APP.fileExtension()}"] = APP.testMirror.getValue()
+      files["source.#{APP.fileExtension()}"] = APP.srcMirror.getValue()
+      
       newGist =
         description: desc
         public: true
-        files:
-          "test.js":
-            "content": APP.testMirror.getValue()
-          "source.js":
-            "content": APP.srcMirror.getValue()
+        files: files
+      console.log newGist
       
       $.ajax
         url: "/creategist"
@@ -103,8 +107,9 @@ window.APP =
     $.ajax
       url: "https://api.github.com/gists/#{id}"
       success: ( data ) ->
-        APP.testMirror.setValue( data.files[ "test.js" ].content )
-        APP.srcMirror.setValue( data.files[ "source.js" ].content )
+        fileExtension = if data.files[ "test.coffee" ] then "coffee" else "js"
+        APP.testMirror.setValue( data.files[ "test.#{fileExtension}" ].content )
+        APP.srcMirror.setValue( data.files[ "source.#{fileExtension}" ].content )
   
   getGist: ->
     smoke.prompt "Enter a Gist ID:", ( id ) ->

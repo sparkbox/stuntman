@@ -164,8 +164,6 @@
     }
   };
 
-  if (false) {
-    $(document).ready(UTIL.loadEvents);
-  }
+  $(document).ready(UTIL.loadEvents);
 
 }).call(this);

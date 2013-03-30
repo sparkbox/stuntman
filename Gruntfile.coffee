@@ -29,8 +29,10 @@ module.exports = (grunt) ->
       compile:
         files:
           "public/js/testAllTheThings.js": ["public/coffee/client.coffee"]
-      glob_to_multiple:
-        files: grunt.file.expandMapping(["specs/*.coffee"], "specs/js/", {
+          "specs/server/src/app.js": ["conf.coffee", "octodex.coffee", "app.coffee"]
+          
+      client_specs:
+        files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
             destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "");
         })
@@ -53,13 +55,26 @@ module.exports = (grunt) ->
           "public/js/testAllTheThings.min.js": ["public/js/client.js"]
 
     jasmine:
-      src: "public/js/testAllTheThings.js" # This is actually loaded via the custom runner template
-      options:
-        template: "specs/runner-templates/test-runner.tmpl"
-        specs: "specs/js/*Spec.js"
-        helpers: ["specs/js/*Helper.js", "specs/lib/*.js"]
-        vendor: ["public/js/libs.js"] # This is actually loaded via the custom runner template
+      client:
+        src: "This is loaded via client/client_spec_runner.tmpl"
+        options:
+          template: "specs/client/client_spec_runner.tmpl"
+          specs: "specs/client/js/*Spec.js"
+          helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
+          vendor: ["This is loaded via client/client_spec_runner.tmpl"]
 
+    
+    jasmine_node:
+      # matchall: true
+      projectRoot: "./specs/server/"
+      requirejs: true
+      forceExit: true
+      jUnit:
+        report: false
+        savePath : "./build/reports/jasmine/"
+        useDotNotation: true
+        consolidate: true
+        
     exec:
       copyCoffee:
         command: "mkdir -p public/coffee; cp -R src-client/coffee/ public/coffee/"
@@ -75,10 +90,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-jasmine"
+  grunt.loadNpmTasks "grunt-jasmine-node"
   grunt.loadNpmTasks "grunt-exec"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "jasmine" ]
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "jasmine:client" ] # "jasmine_node"
 
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]

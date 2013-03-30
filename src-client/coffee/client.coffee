@@ -150,5 +150,6 @@ window.APP =
       APP.loadTests()
       
       $( window ).on( "resize", APP.resizeEditors ).resize()
-              
-$(document).ready UTIL.loadEvents
+
+if false
+  $(document).ready UTIL.loadEvents

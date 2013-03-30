@@ -2,7 +2,7 @@
 _SpecRunner.html
 npm-debug.log
 tmp/*
-dist/*
+public/*
 .sass-cache/*
 .grunt/*
 

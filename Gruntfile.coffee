@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src-client/coffee/*.coffee", "specs/*.coffee"]
+        files: ["src-client/coffee/*.coffee", "specs/client/*.coffee"]
         tasks: "coffeescript"
 
     compass:
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
-            destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "");
+            destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "")
         })
     
     concat:
@@ -59,7 +59,7 @@ module.exports = (grunt) ->
         src: "This is loaded via client/client_spec_runner.tmpl"
         options:
           template: "specs/client/client_spec_runner.tmpl"
-          specs: "specs/client/js/*Spec.js"
+          specs: "specs/client/js/client/*Spec.js"
           helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
           vendor: ["This is loaded via client/client_spec_runner.tmpl"]
 

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "socketClientSpec.js",
+  "sourceRoot": "../../",
+  "sources": [
+    "socketClientSpec.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAA0B,KAA1B,CAA0B,MAA1B;CACE,OAAA,IAAA;;CAAA,EAAe,CAAf,QAAA;CAAA,EACW,CAAX,KAAW,CAAX;CACE,EAAmB,CAAA,EAAnB,MAAA;CADF,IAAW;CAGR,CAAH,CAAsC,MAAA,EAAtC,sBAAA;CACE,EAAwB,GAAxB,EAAA,IAAA;AACO,CAAA,EAAwB,GAA/B,MAAA,CAAA;CAFF,IAAsC;CALxC,EAA0B;CAA1B"
+}

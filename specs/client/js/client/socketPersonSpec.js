@@ -21,10 +21,24 @@
     it("should assign a person number of 0 by default", function() {
       return expect(socketPerson.getNumber()).toBe(0);
     });
-    return it("should be able to change the person name", function() {
+    it("should be able to change the person name", function() {
       expect(socketPerson.name).toBe("");
       socketPerson.setName("Patrick");
       return expect(socketPerson.name).toBe("Patrick");
+    });
+    it("should have an ID field of null by default.", function() {
+      return expect(socketPerson.id).toBeNull();
+    });
+    it("should allow you to set an ID", function() {
+      socketPerson.setId(123);
+      return expect(socketPerson.id).toBe(123);
+    });
+    return it("should allow you to add an name and an ID in the constructor.", function() {
+      var smith;
+
+      smith = new window.APP.SocketPerson("Smith", 2);
+      expect(smith.getName()).toBe("Smith");
+      return expect(smith.getId()).toBe(2);
     });
   });
 

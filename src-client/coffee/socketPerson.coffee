@@ -1,9 +1,10 @@
 window.APP = window.APP || {}
 
 window.APP.SocketPerson = class SocketPerson
-  constructor: (name = "") ->
+  constructor: (name = "", id = null) ->
     @name = name
     @number = 0
+    @id = id
   getNumber: ->
     @number
   getName: ->
@@ -12,4 +13,7 @@ window.APP.SocketPerson = class SocketPerson
     @number = n
   setName: (name) ->
     @name = name
-  
+  setId: (id) ->
+    @id = id
+  getId: ->
+    @id

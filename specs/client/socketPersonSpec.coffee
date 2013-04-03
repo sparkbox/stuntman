@@ -17,6 +17,12 @@ describe "A Socket Person", ->
     expect(socketPerson.name).toBe("")
     socketPerson.setName("Patrick")
     expect(socketPerson.name).toBe("Patrick")
-
-
-      
+  it "should have an ID field of null by default.", ->
+    expect(socketPerson.id).toBeNull()
+  it "should allow you to set an ID", ->
+    socketPerson.setId(123)
+    expect(socketPerson.id).toBe(123)
+  it "should allow you to add an name and an ID in the constructor.", ->
+    smith = new window.APP.SocketPerson("Smith", 2)
+    expect(smith.getName()).toBe("Smith")
+    expect(smith.getId()).toBe(2)

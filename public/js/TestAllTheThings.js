@@ -172,14 +172,48 @@
 
   window.APP.SocketClient = SocketClient = (function() {
     function SocketClient() {
-      this.people = [];
+      this.remotePeople = [];
       this.personCount = 0;
+      this.localPerson = null;
     }
 
     SocketClient.prototype.addPerson = function(newPerson) {
       if (typeof newPerson === "object") {
-        this.people.push(newPerson);
+        this.remotePeople.push(newPerson);
         return this.personCount++;
+      }
+    };
+
+    SocketClient.prototype.addLocalPerson = function(localPerson) {
+      this.localPerson = localPerson;
+      return this.personCount++;
+    };
+
+    SocketClient.prototype.removePersonByName = function(name) {
+      var person, _i, _len, _ref;
+
+      _ref = this.remotePeople;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        person = _ref[_i];
+        if (person.getName() === name) {
+          this.remotePeople.splice(this.remotePeople.indexOf(person), 1);
+          this.personCount--;
+          return;
+        }
+      }
+    };
+
+    SocketClient.prototype.removePersonById = function(id) {
+      var person, _i, _len, _ref;
+
+      _ref = this.remotePeople;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        person = _ref[_i];
+        if (person.getId() === id) {
+          this.remotePeople.splice(this.remotePeople.indexOf(person), 1);
+          this.personCount--;
+          return;
+        }
       }
     };
 
@@ -190,12 +224,16 @@
   window.APP = window.APP || {};
 
   window.APP.SocketPerson = SocketPerson = (function() {
-    function SocketPerson(name) {
+    function SocketPerson(name, id) {
       if (name == null) {
         name = "";
       }
+      if (id == null) {
+        id = null;
+      }
       this.name = name;
       this.number = 0;
+      this.id = id;
     }
 
     SocketPerson.prototype.getNumber = function() {
@@ -212,6 +250,14 @@
 
     SocketPerson.prototype.setName = function(name) {
       return this.name = name;
+    };
+
+    SocketPerson.prototype.setId = function(id) {
+      return this.id = id;
+    };
+
+    SocketPerson.prototype.getId = function() {
+      return this.id;
     };
 
     return SocketPerson;

@@ -190,7 +190,29 @@
   window.APP = window.APP || {};
 
   window.APP.SocketPerson = SocketPerson = (function() {
-    function SocketPerson() {}
+    function SocketPerson(name) {
+      if (name == null) {
+        name = "";
+      }
+      this.name = name;
+      this.number = 0;
+    }
+
+    SocketPerson.prototype.getNumber = function() {
+      return this.number;
+    };
+
+    SocketPerson.prototype.getName = function() {
+      return this.name;
+    };
+
+    SocketPerson.prototype.setNumber = function(n) {
+      return this.number = n;
+    };
+
+    SocketPerson.prototype.setName = function(name) {
+      return this.name = name;
+    };
 
     return SocketPerson;
 

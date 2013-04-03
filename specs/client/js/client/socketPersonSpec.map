@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "socketPersonSpec.js",
+  "sourceRoot": "../../",
+  "sources": [
+    "socketPersonSpec.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAA4B,KAA5B,CAA4B,QAA5B;CACE,OAAA,IAAA;;CAAA,EAAe,CAAf,QAAA;CAAA,EACW,CAAX,KAAW,CAAX;CACE,EAAmB,CAAA,EAAnB,MAAA;CADF,IAAW;CAGR,CAAH,CAAiD,MAAA,EAAjD,iCAAA;CACE,EAAwB,GAAxB,EAAA,IAAA;CACO,EAAiB,GAAxB,MAAA,CAAA;CAFF,IAAiD;CALnD,EAA4B;CAA5B"
+}

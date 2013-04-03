@@ -1,5 +1,7 @@
 //@ sourceMappingURL=testAllTheThings.map
 (function() {
+  var SocketClient, SocketPerson;
+
   window.APP = {
     showResults: function(data) {
       var $results;
@@ -165,5 +167,33 @@
   };
 
   $(document).ready(UTIL.loadEvents);
+
+  window.APP = window.APP || {};
+
+  window.APP.SocketClient = SocketClient = (function() {
+    function SocketClient() {
+      this.people = [];
+      this.personCount = 0;
+    }
+
+    SocketClient.prototype.addPerson = function(newPerson) {
+      if (typeof newPerson === "object") {
+        this.people.push(newPerson);
+        return this.personCount++;
+      }
+    };
+
+    return SocketClient;
+
+  })();
+
+  window.APP = window.APP || {};
+
+  window.APP.SocketPerson = SocketPerson = (function() {
+    function SocketPerson() {}
+
+    return SocketPerson;
+
+  })();
 
 }).call(this);

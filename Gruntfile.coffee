@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["public/coffee/*.coffee", "specs/client/*.coffee"]
+        files: ["src-client/coffee/*.coffee", "specs/client/*.coffee"]
         tasks: "coffeescript"
 
     compass:
@@ -28,7 +28,7 @@ module.exports = (grunt) ->
         sourceMap: true
       compile:
         files:
-          "public/js/testAllTheThings.js": ["public/coffee/client.coffee", "public/coffee/socketClient.coffee", "public/coffee/socketPerson.coffee"]
+          "public/js/testAllTheThings.js": ["src-client/coffee/client.coffee", "src-client/coffee/socketClient.coffee", "src-client/coffee/socketPerson.coffee"]
           "specs/server/src/app.js": ["conf.coffee", "octodex.coffee", "app.coffee"]
           
       client_specs:

@@ -28,14 +28,18 @@ module.exports = (grunt) ->
         sourceMap: true
       compile:
         files:
-          "public/js/testAllTheThings.js": ["public/coffee/client.coffee"]
-          
+          "public/js/testAllTheThings.js": ["public/coffee/client.coffee"]     
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
             destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "")
         })
-    
+      server_specs:
+        files: grunt.file.expandMapping(["specs/server/*.coffee"], "specs/server/", {
+          rename: (destBase, destPath) ->
+            destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\/server\//, "")
+        })
+
     concat:
       js:
         src: ["src-client/js/libs/*.js", "src-client/js/libs/cm-modes/**/*.js"]
@@ -64,7 +68,7 @@ module.exports = (grunt) ->
         
     cafemocha:
       testThis:
-        src: "specs/server/*.coffee"
+        src: "specs/server/*Spec.js"
         options:
           ui: "tdd"
           # require: [ "should" ]
@@ -90,7 +94,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-exec"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "jasmine:client", "cafemocha" ]
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "cafemocha", "jasmine:client" ]
 
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]

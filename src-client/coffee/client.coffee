@@ -72,7 +72,8 @@ window.APP =
       )
 
   resizeEditors: ->
-    $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");
+    if $( "#source" ).position()
+      $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");
   
   setEditorModes: ->
     APP.testMirror.setOption "mode", this.value
@@ -128,21 +129,29 @@ window.APP =
     $( "#load-gist" ).on "click", ( e ) ->
       APP.getGist()
     
-    APP.testMirror.on "change", ( editor ) ->
-      APP.codeChange "tests", editor
-    APP.srcMirror.on "change", ( editor ) ->
-      APP.codeChange "src", editor
+    if APP.testMirror
+      APP.testMirror.on "change", ( editor ) ->
+        APP.codeChange "tests", editor
+    
+    if APP.srcMirror
+      APP.srcMirror.on "change", ( editor ) ->
+        APP.codeChange "src", editor
   
   # Initializers
   common:
     init: ->
       APP.error = false
       
-      APP.resultsTpl = Handlebars.compile $( "#resultsTpl" ).html()
-      APP.editorErrorTpl = Handlebars.compile $( "#editorErrorTpl" ).html()
-      APP.gistsTpl = Handlebars.compile $( "#gistsTpl" ).html()
+      if $( "#resultsTpl" ).length
+        APP.resultsTpl = Handlebars.compile $( "#resultsTpl" ).html()
+      if $( "#editorErrorTpl" ).length
+        APP.editorErrorTpl = Handlebars.compile $( "#editorErrorTpl" ).html()
+      if $( "#gistsTpl" ).length
+        APP.gistsTpl = Handlebars.compile $( "#gistsTpl" ).html()
 
-      APP.setupCodeMirror()
+      if $( "#tests" ).length
+        APP.setupCodeMirror()
+      
       APP.bindEvents()
       
       Handlebars.registerHelper 'resultGraphic', APP.resultDisplayHelper
@@ -150,5 +159,6 @@ window.APP =
       APP.loadTests()
       
       $( window ).on( "resize", APP.resizeEditors ).resize()
+
 
 $(document).ready UTIL.loadEvents

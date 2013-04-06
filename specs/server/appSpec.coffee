@@ -1,5 +1,6 @@
-require "../../app.coffee"
+usersById = require "../../app.coffee"
+expect = require "expect.js"
 
 describe "server testing", ->
    it "should work", ->
-     expect(usersById).toBe {1:1}
+     expect(typeof usersById).to.be("object")

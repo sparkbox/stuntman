@@ -1,6 +1,6 @@
 window.APP = window.APP || {}
 
-window.APP.SocketClient = class SocketClient
+class SocketClient
   constructor: ->
     @remotePeople = []
     @personCount = 0
@@ -13,14 +13,27 @@ window.APP.SocketClient = class SocketClient
     @localPerson = localPerson
     @personCount++
   removePersonByName: (name) ->
-    for person in @remotePeople
-      if person.getName() == name
-        @remotePeople.splice(@remotePeople.indexOf(person), 1)
-        @personCount--
-        return
+    if (removePerson = @getPersonByName(name))
+      @remotePeople.splice(@remotePeople.indexOf(removePerson), 1)
+      @personCount--
+      return true
+    return false
   removePersonById: (id) ->
+    if (removePerson = @getPersonById(id))
+      @remotePeople.splice(@remotePeople.indexOf(removePerson), 1)
+      @personCount--
+      return true
+    return false
+  getPersonById: (id) ->
     for person in @remotePeople
       if person.getId() == id
-        @remotePeople.splice(@remotePeople.indexOf(person), 1)
-        @personCount--
-        return
+        return person
+    return false
+  getPersonByName: (name) ->
+    for person in @remotePeople
+      if person.getName() == name
+        return person
+    return false
+
+#Expose to window
+window.APP.SocketClient = SocketClient

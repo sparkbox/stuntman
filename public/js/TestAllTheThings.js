@@ -170,7 +170,7 @@
 
   window.APP = window.APP || {};
 
-  window.APP.SocketClient = SocketClient = (function() {
+  SocketClient = (function() {
     function SocketClient() {
       this.remotePeople = [];
       this.personCount = 0;
@@ -190,40 +190,62 @@
     };
 
     SocketClient.prototype.removePersonByName = function(name) {
-      var person, _i, _len, _ref;
+      var removePerson;
 
-      _ref = this.remotePeople;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        person = _ref[_i];
-        if (person.getName() === name) {
-          this.remotePeople.splice(this.remotePeople.indexOf(person), 1);
-          this.personCount--;
-          return;
-        }
+      if ((removePerson = this.getPersonByName(name))) {
+        this.remotePeople.splice(this.remotePeople.indexOf(removePerson), 1);
+        this.personCount--;
+        return true;
       }
+      return false;
     };
 
     SocketClient.prototype.removePersonById = function(id) {
+      var removePerson;
+
+      if ((removePerson = this.getPersonById(id))) {
+        this.remotePeople.splice(this.remotePeople.indexOf(removePerson), 1);
+        this.personCount--;
+        return true;
+      }
+      return false;
+    };
+
+    SocketClient.prototype.getPersonById = function(id) {
       var person, _i, _len, _ref;
 
       _ref = this.remotePeople;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         person = _ref[_i];
         if (person.getId() === id) {
-          this.remotePeople.splice(this.remotePeople.indexOf(person), 1);
-          this.personCount--;
-          return;
+          return person;
         }
       }
+      return false;
+    };
+
+    SocketClient.prototype.getPersonByName = function(name) {
+      var person, _i, _len, _ref;
+
+      _ref = this.remotePeople;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        person = _ref[_i];
+        if (person.getName() === name) {
+          return person;
+        }
+      }
+      return false;
     };
 
     return SocketClient;
 
   })();
 
+  window.APP.SocketClient = SocketClient;
+
   window.APP = window.APP || {};
 
-  window.APP.SocketPerson = SocketPerson = (function() {
+  SocketPerson = (function() {
     function SocketPerson(name, id) {
       if (name == null) {
         name = "";
@@ -263,5 +285,7 @@
     return SocketPerson;
 
   })();
+
+  window.APP.SocketPerson = SocketPerson;
 
 }).call(this);

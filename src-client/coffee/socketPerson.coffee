@@ -1,6 +1,6 @@
 window.APP = window.APP || {}
 
-window.APP.SocketPerson = class SocketPerson
+class SocketPerson
   constructor: (name = "", id = null) ->
     @name = name
     @number = 0
@@ -17,3 +17,6 @@ window.APP.SocketPerson = class SocketPerson
     @id = id
   getId: ->
     @id
+
+#Expose to window
+window.APP.SocketPerson = SocketPerson

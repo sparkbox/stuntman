@@ -76,7 +76,9 @@
       }));
     },
     resizeEditors: function() {
-      return $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
+      if ($("#source").position()) {
+        return $("#source, #tests").height($(window).height() - $("#source").position().top + "px");
+      }
     },
     setEditorModes: function() {
       APP.testMirror.setOption("mode", this.value);
@@ -142,20 +144,32 @@
       $("#load-gist").on("click", function(e) {
         return APP.getGist();
       });
-      APP.testMirror.on("change", function(editor) {
-        return APP.codeChange("tests", editor);
-      });
-      return APP.srcMirror.on("change", function(editor) {
-        return APP.codeChange("src", editor);
-      });
+      if (APP.testMirror) {
+        APP.testMirror.on("change", function(editor) {
+          return APP.codeChange("tests", editor);
+        });
+      }
+      if (APP.srcMirror) {
+        return APP.srcMirror.on("change", function(editor) {
+          return APP.codeChange("src", editor);
+        });
+      }
     },
     common: {
       init: function() {
         APP.error = false;
-        APP.resultsTpl = Handlebars.compile($("#resultsTpl").html());
-        APP.editorErrorTpl = Handlebars.compile($("#editorErrorTpl").html());
-        APP.gistsTpl = Handlebars.compile($("#gistsTpl").html());
-        APP.setupCodeMirror();
+        if ($("#resultsTpl").length) {
+          APP.resultsTpl = Handlebars.compile($("#resultsTpl").html());
+        }
+        if ($("#editorErrorTpl").length) {
+          APP.editorErrorTpl = Handlebars.compile($("#editorErrorTpl").html());
+        }
+        if ($("#gistsTpl").length) {
+          APP.gistsTpl = Handlebars.compile($("#gistsTpl").html());
+        }
+        if ($("#tests").length) {
+          APP.setupCodeMirror();
+        }
         APP.bindEvents();
         Handlebars.registerHelper('resultGraphic', APP.resultDisplayHelper);
         APP.loadTests();

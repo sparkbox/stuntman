@@ -17,14 +17,13 @@ createGist = (data) ->
     console.log res
 
 express = require("express")
-routes = require("./routes")
-user = require("./routes/user")
-github = require("./routes/github")
 https = require("https")
 GitHubApi = require("github")
 everyauth = require("everyauth")
+user = require("./routes/user")
+github = require("./routes/github")
 conf = require("./conf")
-cat = require("./octodex")
+cat = require("./app/octodex")
 app = express()
 usersById = {}
 usersByGhId = {}

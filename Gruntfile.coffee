@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src-client/coffee/*.coffee", "specs/*.coffee"]
+        files: ["src-client/coffee/*.coffee", "specs/server/*.coffee"]
         tasks: "coffeescript"
 
     compass:
@@ -29,7 +29,6 @@ module.exports = (grunt) ->
       compile:
         files:
           "public/js/testAllTheThings.js": ["public/coffee/client.coffee"]
-          "specs/server/src/app.js": ["conf.coffee", "octodex.coffee", "app.coffee"]
           
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
@@ -62,18 +61,15 @@ module.exports = (grunt) ->
           specs: "specs/client/js/*Spec.js"
           helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
           vendor: ["This is loaded via client/client_spec_runner.tmpl"]
-
-    
-    jasmine_node:
-      # matchall: true
-      projectRoot: "./specs/server/"
-      requirejs: true
-      forceExit: true
-      jUnit:
-        report: false
-        savePath : "./build/reports/jasmine/"
-        useDotNotation: true
-        consolidate: true
+        
+    cafemocha:
+      testThis:
+        src: "specs/server/*.coffee"
+        options:
+          ui: "tdd"
+          # require: [ "should" ]
+          reporter: "nyan"
+          # grep: "specs/server/*"
         
     exec:
       copyCoffee:
@@ -90,11 +86,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-jasmine"
-  grunt.loadNpmTasks "grunt-jasmine-node"
+  grunt.loadNpmTasks "grunt-cafe-mocha"
   grunt.loadNpmTasks "grunt-exec"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "jasmine:client" ] # "jasmine_node"
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "jasmine:client", "cafemocha" ]
 
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]

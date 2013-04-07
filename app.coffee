@@ -1,4 +1,3 @@
-
 ###
 Module dependencies.
 ###
@@ -64,3 +63,5 @@ app.post "/creategist", (req, res) ->
 
 app.listen 3030
 console.log "Go to http://localhost:3030"
+
+module.exports = usersById

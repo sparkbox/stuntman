@@ -34,11 +34,6 @@ module.exports = (grunt) ->
           rename: (destBase, destPath) ->
             destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "")
         })
-      server_specs:
-        files: grunt.file.expandMapping(["specs/server/*.coffee"], "specs/server/", {
-          rename: (destBase, destPath) ->
-            destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\/server\//, "")
-        })
 
     concat:
       js:
@@ -65,16 +60,16 @@ module.exports = (grunt) ->
           specs: "specs/client/js/client/*Spec.js"
           helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
           vendor: ["This is loaded via client/client_spec_runner.tmpl"]
-        
-    cafemocha:
-      testThis:
-        src: "specs/server/*Spec.js"
-        options:
-          ui: "tdd"
-          # require: [ "should" ]
-          reporter: "nyan"
-          # grep: "specs/server/*"
-        
+
+    mochacli:
+      options:
+        #require: ['expect']
+        reporter: 'nyan'
+        bail: true
+        compilers: ['coffee:coffee-script']
+        ui: "tdd"
+      all: ["specs/server/*Spec.coffee"]
+
     exec:
       copyCoffee:
         command: "mkdir -p public/coffee; cp -R src-client/coffee/ public/coffee/"
@@ -90,12 +85,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-jasmine"
-  grunt.loadNpmTasks "grunt-cafe-mocha"
   grunt.loadNpmTasks "grunt-exec"
+  grunt.loadNpmTasks "grunt-mocha-cli"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "cafemocha", "jasmine:client" ]
-
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli", "jasmine:client" ]
+  grunt.registerTask 'test', ['mochacli']
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]
 

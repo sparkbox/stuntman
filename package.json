@@ -14,7 +14,8 @@
     "hiredis": "~0.1.15",
     "connect-redis": "~1.4.5",
     "connect": "~2.7.3",
-    "phantomjs": "1.8.2-0"
+    "phantomjs": "1.8.2-0",
+    "mocha": "1.8.x"
   },
   "devDependencies": {
     "node-jade-compress": "0.0.15",
@@ -27,9 +28,10 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-exec": "~0.4.0",
     "grunt-jasmine": "~0.1.0",
-    "grunt-cafe-mocha": "~0.1.1",
     "grunt-contrib-jasmine": "~0.4.2",
     "jsdom": "~0.5.5",
-    "expect.js": "~0.2.0"
+    "expect.js": "~0.2.0",
+    "grunt-mocha-cli": "~1.0.2",
+    "coffee-script": "1.4.x"
   }
 }

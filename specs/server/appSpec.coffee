@@ -1,6 +1,10 @@
-usersById = require "../../app.coffee"
+App = require "../../app.coffee"
 expect = require "expect.js"
 
-describe "server testing", ->
-   it "should work", ->
-     expect(typeof usersById).to.be("object")
+app = new App()
+
+describe "server testing", -> 
+  it "should work", ->
+     expect(typeof app).to.be("object")
+   it "should also work", ->
+     expect(typeof app.usersById).to.be("object")

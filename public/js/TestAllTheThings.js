@@ -1,5 +1,7 @@
 //@ sourceMappingURL=testAllTheThings.map
 (function() {
+  var SocketClient, SocketPerson;
+
   window.APP = {
     showResults: function(data) {
       var $results;
@@ -179,5 +181,125 @@
   };
 
   $(document).ready(UTIL.loadEvents);
+
+  window.APP = window.APP || {};
+
+  SocketClient = (function() {
+    function SocketClient() {
+      this.remotePeople = [];
+      this.personCount = 0;
+      this.localPerson = null;
+    }
+
+    SocketClient.prototype.addPerson = function(newPerson) {
+      if (typeof newPerson === "object") {
+        this.remotePeople.push(newPerson);
+        return this.personCount++;
+      }
+    };
+
+    SocketClient.prototype.addLocalPerson = function(localPerson) {
+      this.localPerson = localPerson;
+      return this.personCount++;
+    };
+
+    SocketClient.prototype.removePersonByName = function(name) {
+      var removePerson;
+
+      if ((removePerson = this.getPersonByName(name))) {
+        this.remotePeople.splice(this.remotePeople.indexOf(removePerson), 1);
+        this.personCount--;
+        return true;
+      }
+      return false;
+    };
+
+    SocketClient.prototype.removePersonById = function(id) {
+      var removePerson;
+
+      if ((removePerson = this.getPersonById(id))) {
+        this.remotePeople.splice(this.remotePeople.indexOf(removePerson), 1);
+        this.personCount--;
+        return true;
+      }
+      return false;
+    };
+
+    SocketClient.prototype.getPersonById = function(id) {
+      var person, _i, _len, _ref;
+
+      _ref = this.remotePeople;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        person = _ref[_i];
+        if (person.getId() === id) {
+          return person;
+        }
+      }
+      return false;
+    };
+
+    SocketClient.prototype.getPersonByName = function(name) {
+      var person, _i, _len, _ref;
+
+      _ref = this.remotePeople;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        person = _ref[_i];
+        if (person.getName() === name) {
+          return person;
+        }
+      }
+      return false;
+    };
+
+    return SocketClient;
+
+  })();
+
+  window.APP.SocketClient = SocketClient;
+
+  window.APP = window.APP || {};
+
+  SocketPerson = (function() {
+    function SocketPerson(name, id) {
+      if (name == null) {
+        name = "";
+      }
+      if (id == null) {
+        id = null;
+      }
+      this.name = name;
+      this.number = 0;
+      this.id = id;
+    }
+
+    SocketPerson.prototype.getNumber = function() {
+      return this.number;
+    };
+
+    SocketPerson.prototype.getName = function() {
+      return this.name;
+    };
+
+    SocketPerson.prototype.setNumber = function(n) {
+      return this.number = n;
+    };
+
+    SocketPerson.prototype.setName = function(name) {
+      return this.name = name;
+    };
+
+    SocketPerson.prototype.setId = function(id) {
+      return this.id = id;
+    };
+
+    SocketPerson.prototype.getId = function() {
+      return this.id;
+    };
+
+    return SocketPerson;
+
+  })();
+
+  window.APP.SocketPerson = SocketPerson;
 
 }).call(this);

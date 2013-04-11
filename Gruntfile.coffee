@@ -7,7 +7,7 @@ module.exports = (grunt) ->
 
     watch:
       grunt:
-        files: ["Gruntfile.coffee", "package.json"]    
+        files: ["Gruntfile.coffee", "package.json"]
         tasks: "default"
       
       stylesheets:
@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src-client/coffee/*.coffee", "specs/client/*.coffee"]
+        files: ["src-client/coffee/*.coffee", "specs/**/*.coffee"]
         tasks: "coffeescript"
 
     compass:
@@ -28,7 +28,7 @@ module.exports = (grunt) ->
         sourceMap: true
       compile:
         files:
-          "public/js/testAllTheThings.js": ["public/coffee/client.coffee"]     
+          "public/js/testAllTheThings.js": ["public/coffee/client.coffee", "public/coffee/socketClient.coffee", "public/coffee/socketPerson.coffee"]
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
@@ -45,7 +45,7 @@ module.exports = (grunt) ->
         options:
           sourceMap: "public/js/source.map"
           sourceMapRoot: "http://localhost:3030/"
-          sourceMappingURL: "/js/source.map"  
+          sourceMappingURL: "/js/source.map"
         files:
           "public/js/testAllTheThings.min.js": ["public/js/client.js"]
       prod:

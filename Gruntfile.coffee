@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src-client/coffee/*.coffee", "specs/**/*.coffee"]
+        files: ["src/client/coffee/*.coffee", "specs/**/*.coffee"]
         tasks: "coffeescript"
 
     compass:
@@ -37,7 +37,7 @@ module.exports = (grunt) ->
 
     concat:
       js:
-        src: ["src-client/js/libs/*.js", "src-client/js/libs/cm-modes/**/*.js"]
+        src: ["src/client/js/libs/*.js", "src/client/js/libs/cm-modes/**/*.js"]
         dest: "public/js/libs.js"
           
     uglify:
@@ -72,7 +72,7 @@ module.exports = (grunt) ->
 
     exec:
       copyCoffee:
-        command: "mkdir -p public/coffee; cp -R src-client/coffee/ public/coffee/"
+        command: "mkdir -p public/coffee; cp -R src/client/coffee/ public/coffee/"
 
     clean:
       stylesheets: "public/css/*"

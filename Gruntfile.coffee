@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src-client/coffee/*.coffee", "specs/**/*.coffee"]
+        files: ["src-client/coffee/*.coffee", "specs/**/*.coffee", "*.coffee"]
         tasks: "coffeescript"
 
     compass:

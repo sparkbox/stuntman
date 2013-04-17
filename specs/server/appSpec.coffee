@@ -1,4 +1,4 @@
-App = require "../../app.coffee"
+App = require "../../src/server/server.coffee"
 expect = require "expect.js"
 
 app = new App()

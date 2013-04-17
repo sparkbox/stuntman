@@ -1,4 +1,4 @@
-//@ sourceMappingURL=TestAllTheThingsSpec.map
+//@ sourceMappingURL=testAllTheThingsSpec.map
 (function() {
   describe("Test App", function() {
     describe("Languages", function() {

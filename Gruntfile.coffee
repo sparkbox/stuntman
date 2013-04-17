@@ -15,20 +15,21 @@ module.exports = (grunt) ->
         tasks: "stylesheets"
 
       javascript:
-        files: ["src/client/coffee/*.coffee", "specs/**/*.coffee"]
+        files: ["src/client/coffee/*.coffee", "specs/*.coffee"]
         tasks: "coffeescript"
 
     compass:
       dist:
         files:
-          "public/css/mq.css": "public/scss/mq.scss"
+          "mq.css": "/src/client/scss/mq.scss"
+          "no-mq.css": "/src/client/scss/no-mq.scss"
 
     coffee:
       options:
         sourceMap: true
       compile:
         files:
-          "public/js/testAllTheThings.js": ["public/coffee/client.coffee", "public/coffee/socketClient.coffee", "public/coffee/socketPerson.coffee"]
+          "src/server/public/js/testAllTheThings.js": ["src/client/coffee/client.coffee", "src/client/coffee/socketClient.coffee", "src/client/coffee/socketPerson.coffee"]
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
@@ -38,32 +39,30 @@ module.exports = (grunt) ->
     concat:
       js:
         src: ["src/client/js/libs/*.js", "src/client/js/libs/cm-modes/**/*.js"]
-        dest: "public/js/libs.js"
+        dest: "src/server/public/js/libs.js"
           
     uglify:
       dev:
         options:
-          sourceMap: "public/js/source.map"
+          sourceMap: "src/server/public/js/source.map"
           sourceMapRoot: "http://localhost:3030/"
           sourceMappingURL: "/js/source.map"
         files:
-          "public/js/testAllTheThings.min.js": ["public/js/client.js"]
+          "src/server/public/js/testAllTheThings.min.js": ["src/server/public/js/client.js"]
       prod:
         files:
-          "public/js/testAllTheThings.min.js": ["public/js/client.js"]
+          "src/server/public/js/testAllTheThings.min.js": ["src/server/public/js/client.js"]
 
     jasmine:
-      client:
-        src: "This is loaded via client/client_spec_runner.tmpl"
-        options:
-          template: "specs/client/client_spec_runner.tmpl"
-          specs: "specs/client/js/client/*Spec.js"
-          helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
-          vendor: ["This is loaded via client/client_spec_runner.tmpl"]
+      src: "This is loaded via client/client_spec_runner.tmpl"
+      options:
+        template: "specs/client/client_spec_runner.tmpl"
+        specs: "specs/client/js/client/*Spec.js"
+        helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
+        vendor: ["This is loaded via client/client_spec_runner.tmpl"]
 
     mochacli:
       options:
-        #require: ['expect']
         reporter: 'nyan'
         bail: true
         compilers: ['coffee:coffee-script']
@@ -75,8 +74,9 @@ module.exports = (grunt) ->
         command: "mkdir -p public/coffee; cp -R src/client/coffee/ public/coffee/"
 
     clean:
-      stylesheets: "public/css/*"
-      javascript: "public/js/*"
+      stylesheets: "src/server/public/css/*"
+      javascript: "src/server/public/js/*"
+      sourcemaps: ["src/server/public/scss", "src/server/public/coffee", "src/server/public/js/testAllTheThings.map"]
       
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -89,10 +89,14 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-mocha-cli"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli", "jasmine:client" ]
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli", "jasmine" ]
   grunt.registerTask 'test', ['mochacli']
+  
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]
 
+  # Production build
+  grunt.registerTask "production", [ "default", "clean:sourcemaps" ]
+  
   # Default task
   grunt.registerTask "default", [ "coffeescript", "stylesheets" ]

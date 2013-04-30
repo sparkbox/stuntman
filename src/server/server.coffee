@@ -19,22 +19,20 @@ class App
     @nextUserId = 0
     @github = new GitHubApi(version: "3.0.0")
     
-  addUser: (source, sourceUser) ->
-    console.log "add user"
-    user = undefined
-    if arguments.length is 1 # password-based
-      user = sourceUser = source
-      user.id = ++@nextUserId
-      return @usersById[@nextUserId] = user
-    else # non-password-based
-      user = @usersById[++@nextUserId] = id: @nextUserId
-      user[source] = sourceUser
-    user
     
-  createGist: (data) ->
-    github.gists.create data, (e, res) ->
+  addUser: (source, sourceUser) ->
+    user = @usersById[++@nextUserId] = id: @nextUserId
+    user[source] = sourceUser
+
+    return user
+    
+  createGist: (data) =>
+    console.log data
+    @github.gists.create data, (e, res) ->
+      console.log e
       console.log res
-      
+
+  
   init: =>
     everyauth.everymodule.findUserById (id, callback) =>
       callback null, @usersById[id]
@@ -46,18 +44,11 @@ class App
       .appSecret(conf.github.appSecret)
       .scope("gist")
       .findOrCreateUser((sess, accessToken, accessTokenExtra, ghUser) =>
-        # @github.authenticate
-        #   type: "oauth"
-        #   token: accessToken
-        
-        console.log "Github User ID: #{ghUser.id}"
-        console.log "GithubUsers Length: #{@usersByGhId.length}"
-        
-        @usersByGhId[ghUser.id] or (@usersByGhId[ghUser.id] = @addUser("github", ghUser))
-        
-        console.log @usersByGhId[ghUser.id]
-        @usersByGhId[ghUser.id]
-        )
+        @github.authenticate
+          type: "oauth"
+          token: accessToken
+          
+        @usersByGhId[ghUser.id] or (@usersByGhId[ghUser.id] = @addUser("github", ghUser)))
       .redirectPath "/"
 
     app = express()
@@ -78,9 +69,8 @@ class App
           pageData:
             cat: randocat
             
-    app.post "/creategist", (req, res) ->
-      createGist req.body
-      
+    app.post "/creategist", (req, res) =>
+      @createGist req.body
 
     app.listen 3030
     @express = app

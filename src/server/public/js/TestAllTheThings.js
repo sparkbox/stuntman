@@ -99,8 +99,12 @@
         var files, newGist;
 
         files = {};
-        files["test." + (APP.fileExtension())] = APP.testMirror.getValue();
-        files["source." + (APP.fileExtension())] = APP.srcMirror.getValue();
+        files["test." + (APP.fileExtension())] = {
+          content: APP.testMirror.getValue()
+        };
+        files["source." + (APP.fileExtension())] = {
+          content: APP.srcMirror.getValue()
+        };
         newGist = {
           description: desc,
           "public": true,

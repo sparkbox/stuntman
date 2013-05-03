@@ -29,7 +29,7 @@ module.exports = (grunt) ->
         sourceMap: true
       compile:
         files:
-          "src/server/public/js/testAllTheThings.js": ["src/client/coffee/client.coffee", "src/client/coffee/socketClient.coffee", "src/client/coffee/socketPerson.coffee"]
+          "src/server/public/js/stuntman.js": ["src/client/coffee/client.coffee", "src/client/coffee/socketClient.coffee", "src/client/coffee/socketPerson.coffee"]
       client_specs:
         files: grunt.file.expandMapping(["specs/client/*.coffee"], "specs/client/js/", {
           rename: (destBase, destPath) ->
@@ -48,10 +48,10 @@ module.exports = (grunt) ->
           sourceMapRoot: "http://localhost:3030/"
           sourceMappingURL: "/js/source.map"
         files:
-          "src/server/public/js/testAllTheThings.min.js": ["src/server/public/js/client.js"]
+          "src/server/public/js/stuntman.min.js": ["src/server/public/js/client.js"]
       prod:
         files:
-          "src/server/public/js/testAllTheThings.min.js": ["src/server/public/js/client.js"]
+          "src/server/public/js/stuntman.min.js": ["src/server/public/js/client.js"]
 
     jasmine:
       src: "This is loaded via client/client_spec_runner.tmpl"
@@ -76,7 +76,7 @@ module.exports = (grunt) ->
     clean:
       stylesheets: "src/server/public/css/*"
       javascript: "src/server/public/js/*"
-      sourcemaps: ["src/server/public/scss", "src/server/public/coffee", "src/server/public/js/testAllTheThings.map"]
+      sourcemaps: ["src/server/public/scss", "src/server/public/coffee", "src/server/public/js/stuntman.map"]
       
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-coffee"

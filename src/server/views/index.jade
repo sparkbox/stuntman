@@ -39,13 +39,13 @@ html
           
           - else
             img.avatar(src='#{everyauth.github.user.avatar_url}')
-            button#save-gist.controlPanel-iconButton(data-icon!='&#xe003;')
+            button#save-gist.controlPanel-iconButton(title='Save Gist to Github', data-icon!='&#xe003;')
               span.visuallyHidden
                 | Save
-            button#load-gist.controlPanel-iconButton(data-icon!='&#xe004;', data-name='#{everyauth.github.user.login}')
+            button#load-gist.controlPanel-iconButton(title='Load Gist from Github', data-icon!='&#xe004;', data-name='#{everyauth.github.user.login}')
               span.visuallyHidden
                 | Load
-            a#github-logout.controlPanel-iconButton(href='/logout', data-icon!='&#xe001;')
+            a#github-logout.controlPanel-iconButton.github-logout(title='Logout', href='/logout', data-icon!='&#xe001;')
               span.visuallyHidden
                 | Logout
     div#results.results

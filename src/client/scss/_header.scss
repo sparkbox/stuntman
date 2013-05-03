@@ -8,21 +8,25 @@ header {
   position: relative;
   
   h1 {
-    @include rem(font-size, 2);
+    @include rem(font-size, 1);
+    letter-spacing: .3em;
+    font-weight: normal;
     margin: 10px;
     text-transform: uppercase;
     color: $title-text;
-    width: 11.5rem;
+    width: 21.5rem;
     float: left;
+    padding-top: 15px;
   }
   
   .sparkboxLogo {
     background: url(/images/sparkbox-type.png);
     text-indent: -999px;
-    display: block;
+    display: inline-block;
     width: 140px;
     height: 30px;
-    margin: 20px;
+    margin: 6px 13px 6px 6px;
+    @include transform( translateY(-15px) );
   }
   
   @include sbmq($control-collapse-width) {
@@ -36,7 +40,6 @@ header {
   @include sbmq($control-collapse-width) {
     height: 100%;
     @include rem(width, 35);
-    background: $controls-background;
   }
 }
 .controlPanel-iconButton {
@@ -57,9 +60,10 @@ header {
   bottom: 0;
   width: 100%;
   padding: 10px;
-  text-align: right;
+  text-align: left;
   
   @include sbmq($control-collapse-width) {
+    background: none;
     position: relative;
     width: auto;
     padding-top: 20px;
@@ -75,6 +79,7 @@ header {
 }
 
 .githubControls {
+  background: $controls-background;
   display: inline;
   padding-right: 20px;
   float: right;
@@ -83,8 +88,8 @@ header {
     display: inline-block;
     margin-top: 15px;
   }
-   
-  @include sbmq($control-collapse-width) {
+  .github-logout {
+    margin-left: 8px;
   }
 }
 
@@ -103,4 +108,5 @@ header {
 .avatar {
   float: left;
   height: 60px;
+  margin-right: 5px;
 }

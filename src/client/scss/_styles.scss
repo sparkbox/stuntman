@@ -28,7 +28,8 @@ body {
 }
 
 .results {
-  @include rem( min-height, 2.4 );
+  @include rem( min-height, 3.5 );
+  padding-top: 10px;
   width: 100%;
   
   > div {
@@ -107,6 +108,7 @@ body {
     
       &:before {
         content: "\e002";
+        color: #888;
         position: absolute;
         left: 0;
         @include rem( top, .5 );
@@ -164,6 +166,10 @@ body {
 .CodeMirror {
   height: 100%;
   overflow: scroll;
+}
+
+.tests {
+  clear: left;
 }
 
 .tests, .source {

@@ -3,41 +3,51 @@
 doctype 5
 html
   head
-    title Test All the Things
+    title Stuntman - Test Your Code
     link(rel='stylesheet', href='css/mq.css')
   body    
     //- block content
       
     header
-      h1 Test All the Things
+      h1
+        a.sparkboxLogo(href='//seesparkbox.com')
+          | Sparkbox
+        | Stuntman
 
-      form
-        label
-          | Language:
-          select#language
-            option(value='coffeescript') CoffeeScript
-            option(value='javascript') JavaScript
-        label
-          | Test Suite:
-          select#runner
-            option(value='jasmine') Jasmine
-            option(value='mocha') Mocha
-            option(value='qunit') QUnit
-            
-      .github-controls
-        - if (!everyauth.loggedIn)
-          #github-login
-          a(href='/auth/github', style='border: 0px')
-            //- img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
-            img.avatar(style='border: 0px', src='#{pageData.cat}')
-        
-        - else
-          button#save-gist
-            ⬆
-          button#load-gist(data-name='#{everyauth.github.user.login}')
-            ⬇
-          img.avatar(style='border: 0px', src='#{everyauth.github.user.avatar_url}')
-                  
+      .controlPanel
+        //- button.show-language-controls.controlPanel-iconButton(data-icon!='&#xe005;')
+        //-   span.visuallyHidden
+        //-     | Show Lanugage Controls
+        form.languageControls
+          label.languageControls-label
+            | Language:
+            select.languageControls-option#language
+              option(value='coffeescript') CoffeeScript
+              option(value='javascript') JavaScript
+          label.languageControls-label
+            | Test Suite:
+            select.languageControls-option#runner
+              option(value='jasmine') Jasmine
+              option(value='mocha') Mocha
+              option(value='qunit') QUnit
+              
+        .githubControls
+          - if (!everyauth.loggedIn)
+            a.github-connect(href='/auth/github', data-icon!='&#xe000;')
+              span.visuallyHidden
+                | Connect to Github
+          
+          - else
+            img.avatar(src='#{everyauth.github.user.avatar_url}')
+            button#save-gist.controlPanel-iconButton(data-icon!='&#xe003;')
+              span.visuallyHidden
+                | Save
+            button#load-gist.controlPanel-iconButton(data-icon!='&#xe004;', data-name='#{everyauth.github.user.login}')
+              span.visuallyHidden
+                | Load
+            a#github-logout.controlPanel-iconButton(href='/logout', data-icon!='&#xe001;')
+              span.visuallyHidden
+                | Logout
     div#results.results
     div.tests
       h2 Tests
@@ -57,7 +67,7 @@ html
       |   <output class="num-failures">{{stats.failures}}</output>
       |   {{#resultGraphic stats.failures}}{{/resultGraphic}}
       | </div>
-      | <ul>
+      | <ul class="errorList">
       |   {{#each failures}}
       |     <li>
       |       <h2>{{title}}</h2>

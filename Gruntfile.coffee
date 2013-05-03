@@ -11,7 +11,7 @@ module.exports = (grunt) ->
         tasks: "default"
       
       stylesheets:
-        files: "public/scss/*"
+        files: "src/client/scss/*.*"
         tasks: "stylesheets"
 
       javascript:

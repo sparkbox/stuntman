@@ -9,55 +9,22 @@
           box-sizing: border-box;
 }
 
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 body {
   padding: 0;
 }
 .hidden {
   display: none;
-}
-
-header {
-  background: $header-background;
-  color: $header-text;
-
-  h1 {
-    @include rem(font-size, 2);
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    color: $title-text;
-  }
-  
-  select {
-    margin-right: 15px;
-  }
-  
-  @include sbmq( 70em ) {
-
-    form {
-      position: absolute;
-      top: 7px;
-      left: 5px;
-    }
-  }
-  
-  .github-controls {
-    position: absolute;
-    right: 0;
-    top: 0;
-    
-    button {
-      -webkit-appearance: none;
-      background: none;
-      border: none;
-      color: $gist-controls-text;
-      top: -0.7rem;
-      position: relative;
-    }
-  }
-  .avatar {
-    @include rem( height, 2.3 );
-  }
 }
 
 .results {
@@ -114,7 +81,7 @@ header {
     }
   }
   
-  ul {
+  .errorList {
     float: left;
     list-style: none;
     max-height: 2rem;
@@ -124,17 +91,36 @@ header {
     padding-left: 10px;
     
     li {
-      padding: 0 10px 10px;
+      padding: 10px 10px 10px;
+      border-bottom: 1px solid #000;
+      
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+    
+    p {
+      color: $failed;
     }
     
     &.show-more {
     
       &:before {
-        content: "⬇";
-        color: $failed;
+        content: "\e002";
         position: absolute;
         left: 0;
         @include rem( top, .5 );
+        
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        @include transition-property(transform);
+        @include transition-duration(.25s);
       }
     
       &:hover {
@@ -152,7 +138,7 @@ header {
         }
         
         &:before {
-          content: "⬆";
+          @include rotateZ(90deg);
         }
       }
     }
@@ -168,9 +154,9 @@ header {
     @include rem( font-size, .8 );
   }
   
-  @include sbmq( 61em ) {
+  @include sbmq( 52em ) {
     > div {
-      width: 33%;
+      width: 20%;
     }
   }
 }

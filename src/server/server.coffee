@@ -9,7 +9,6 @@ everyauth = require("everyauth")
 user = require("./routes/user")
 github = require("./routes/github")
 conf = require("./conf")
-cat = require("./lib/octodex")
 
 class App
   constructor: ->
@@ -64,10 +63,7 @@ class App
       app.use express.static(__dirname + "/public")
       
     app.get "/", (req, res) ->
-      cat.octodex (randocat) ->
-        res.render "index",
-          pageData:
-            cat: randocat
+      res.render "index"
             
     app.post "/creategist", (req, res) =>
       @createGist req.body

@@ -53,14 +53,6 @@ module.exports = (grunt) ->
         files:
           "src/server/public/js/stuntman.min.js": ["src/server/public/js/client.js"]
 
-    jasmine:
-      src: "This is loaded via client/client_spec_runner.tmpl"
-      options:
-        template: "specs/client/client_spec_runner.tmpl"
-        specs: "specs/client/js/client/*Spec.js"
-        helpers: ["specs/client/js/*Helper.js", "specs/client/lib/*.js"]
-        vendor: ["This is loaded via client/client_spec_runner.tmpl"]
-
     mochacli:
       options:
         reporter: 'nyan'
@@ -84,12 +76,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
-  grunt.loadNpmTasks "grunt-contrib-jasmine"
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-mocha-cli"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli", "jasmine" ]
+  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli" ]
   grunt.registerTask 'test', ['mochacli']
   
   # Clean and compile stylesheets

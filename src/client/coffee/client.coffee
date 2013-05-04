@@ -22,13 +22,16 @@ window.APP =
       $( "#testRunner" ).replaceWith $newFrame
   
   codeToJS: ( code ) ->
+    APP.error = false
     if APP.testMirror.getMode().name == "coffeescript"
       try
         code = CoffeeScript.compile code
         APP.error = false
       catch e
-        $( "#results" ).html APP.editorErrorTpl e
         APP.error = true
+        $results = $( "#results" )
+        $results.html APP.compilationErrorTpl 
+          error: APP.editorErrorTpl e
       
     return code
   
@@ -138,6 +141,9 @@ window.APP =
     if APP.srcMirror
       APP.srcMirror.on "change", ( editor ) ->
         APP.codeChange "src", editor
+
+    $( ".github-connect, #github-logout" ).on "click", ->
+      $(@).addClass "githubStateChange"
   
   # Initializers
   common:
@@ -146,6 +152,8 @@ window.APP =
       
       if $( "#resultsTpl" ).length
         APP.resultsTpl = Handlebars.compile $( "#resultsTpl" ).html()
+      if $( "#compilationErrorTpl" ).length
+        APP.compilationErrorTpl = Handlebars.compile $( "#compilationErrorTpl" ).html()
       if $( "#editorErrorTpl" ).length
         APP.editorErrorTpl = Handlebars.compile $( "#editorErrorTpl" ).html()
       if $( "#gistsTpl" ).length

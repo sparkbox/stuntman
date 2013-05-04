@@ -1350,28 +1350,45 @@ body {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003159}}
+.results .compilationError {
+  padding: 5px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003162}}
+.results .compilationError p {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003165}}
+.results .compilationError span {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 0;
+  color: #da230a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003175}}
 .results > div {
   width: 20%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003181}}
 .CodeMirror {
   height: 100%;
   overflow: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003186}}
 .tests {
   clear: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003190}}
 .tests, .source {
   float: left;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003194}}
 .tests h2, .source h2 {
   background: #272822;
   color: #f8f8f2;
@@ -1382,12 +1399,12 @@ body {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003205}}
 .tests, .source {
   width: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003209}}
 .tests {
   border-right: 1px solid white;
 }
@@ -1497,9 +1514,10 @@ header .sparkboxLogo {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000396}}
 .github-connect {
   display: block;
-  margin-top: 15px;
+  padding: 16px 0 16px 24px;
+  text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003101}}
 .github-connect:before {
   color: #888888;
   text-decoration: none;
@@ -1507,7 +1525,16 @@ header .sparkboxLogo {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003109}}
+.githubStateChange:before {
+  -webkit-transition: color, 0.5s;
+  -moz-transition: color, 0.5s;
+  -o-transition: color, 0.5s;
+  transition: color, 0.5s;
+  color: #222;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003114}}
 .avatar {
   float: left;
   height: 60px;

@@ -156,6 +156,21 @@ body {
     @include rem( font-size, .8 );
   }
   
+  .compilationError {
+    padding: 5px 10px;
+    
+    p {
+      display: block;
+    }
+    span {
+      display: block;
+      width: 100%;
+      @include rem(font-size, 1);
+      padding: 0;
+      color: $failed;
+    }
+  }
+  
   @include sbmq( 52em ) {
     > div {
       width: 20%;

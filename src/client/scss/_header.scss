@@ -95,7 +95,8 @@ header {
 
 .github-connect {
   display: block;
-  margin-top: 15px;
+  padding: 16px 0 16px 24px;
+  text-decoration: none;
   
   &:before {
     color: $gist-controls-text;
@@ -103,6 +104,11 @@ header {
     font-size: 30px;
     display: block;
   }
+}
+
+.githubStateChange:before {
+  @include transition(color, .5s);
+  color: #222;
 }
 
 .avatar {

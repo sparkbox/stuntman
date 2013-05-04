@@ -75,6 +75,10 @@ html
       |     </li>
       |   {{/each}}
       | </ul>
+    script#compilationErrorTpl(type='text/x-handlebars-template')
+      | <div class="compilationError">
+      |   {{{error}}}
+      | </div>
     script#editorErrorTpl(type='text/x-handlebars-template')
       | <p>
       |   <span>{{name}}</span>
@@ -91,4 +95,4 @@ html
       |   {{/each}}
       | </ul>
     script(src="js/libs.js")
-    script(src="js/testAllTheThings.js")
+    script(src="js/stuntman.js")

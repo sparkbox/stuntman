@@ -100,14 +100,13 @@ window.APP =
         description: desc
         public: true
         files: files
-      console.log newGist
       
       $.ajax
         url: "/creategist"
         data: newGist
         type: 'POST'
         success: ->
-          alert "Gist saved."
+          smoke.alert "Gist saved."
 
   loadGist: ( id ) ->
     $.ajax
@@ -118,8 +117,14 @@ window.APP =
         APP.srcMirror.setValue( data.files[ "source.#{fileExtension}" ].content )
   
   getGist: ->
-    smoke.prompt "Enter a Gist ID:", ( id ) ->
-      APP.loadGist id
+    $.ajax
+      url: "https://api.github.com/users/#{APP.githubUser}/gists"
+      success: ( data ) ->
+        APP.gists = APP.sortGists data
+        smoke.alert( APP.gistsTpl( APP.gists ), ok: "Cancel" )
+  
+  sortGists: ( data ) ->
+    data.filter ( gist ) -> gist if gist.files['source.coffee'] and gist.files['test.coffee'] 
   
   bindEvents: ->
     $( "#language" ).on( "change", APP.setEditorModes ).change()
@@ -144,12 +149,18 @@ window.APP =
 
     $( ".github-connect, #github-logout" ).on "click", ->
       $(@).addClass "githubStateChange"
+      
+    $( "body" ).on "click", ".user-gist", ( e ) ->
+      e.preventDefault()
+      APP.loadGist $(@).data "id"
+      $( ".smoke-alert" ).remove()
   
   # Initializers
   common:
     init: ->
       APP.error = false
-      
+      APP.githubUser = $( "#load-gist" ).data( "name" )
+        
       if $( "#resultsTpl" ).length
         APP.resultsTpl = Handlebars.compile $( "#resultsTpl" ).html()
       if $( "#compilationErrorTpl" ).length

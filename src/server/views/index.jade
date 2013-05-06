@@ -56,6 +56,12 @@ html
       h2 Source
       div#source.editor
     iframe#testRunner.hidden
+      
+    section#saveGistDialog.dialog
+      div.dialog-body
+        input#gistDescription(name="description", placeholder="Brief Description")
+          
+      
     script#resultsTpl(type='text/x-handlebars-template')
       | <div>
       |   <span>Passing Tests:</span>
@@ -89,10 +95,8 @@ html
       |   <option value="{{name}}">{{name}}</option>
       | {{/each}}
     script#gistsTpl(type='text/x-handlebars-template')
-      | <ul>
-      |   {{#each .}}
-      |     <li><a href="{{url}}">{{description}}</a></li>
-      |   {{/each}}
-      | </ul>
+      | <h2>Select a Gist to open</h2><ul class="usersGists">{{#each .}}<li><a class="user-gist" href="#" data-id="{{id}}">{{description}}</a></li>{{/each}}</ul>
+
+
     script(src="js/libs.js")
     script(src="js/stuntman.js")

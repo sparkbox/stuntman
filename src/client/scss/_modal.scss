@@ -1,0 +1,11 @@
+.usersGists {
+  list-style: none;
+  padding: 0;
+  
+  a {
+    color: #333;
+  }
+  time {
+    @include rem(font-size, .6);
+  }
+}

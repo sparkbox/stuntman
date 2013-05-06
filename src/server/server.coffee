@@ -50,13 +50,29 @@ class App
         @usersByGhId[ghUser.id] or (@usersByGhId[ghUser.id] = @addUser("github", ghUser)))
       .redirectPath "/"
 
+    # RedisSessionStore ?= require('connect-redis')(express)
+    # redisSessionStore ?= new RedisSessionStore(
+    #     host: appConfig.databaseRedis.host
+    #     port: appConfig.databaseRedis.port
+    #     db: appConfig.databaseRedis.username
+    #     pass: appConfig.databaseRedis.password
+    #     no_ready_check: true
+    #     ttl: 60*60  # hour
+    # )
+    # server.use express.session({
+    #     secret: appConfig.site.salt
+    #     cookie: maxAge: 1000*60*60
+    #     store: redisSessionStore
+    # })
+
+
     app = express()
     app.configure =>
       app.set "views", __dirname + "/views"
       app.set "view engine", "jade"
       app.use express.bodyParser()
       app.use express.cookieParser()
-      app.use express.session(secret: "secret")
+      app.use express.session(secret: conf.redis.secret)
       app.use everyauth.middleware(app)
       app.use express.methodOverride()
       app.use app.router

@@ -147,7 +147,12 @@ window.APP =
       APP.srcMirror.on "change", ( editor ) ->
         APP.codeChange "src", editor
 
-    $( ".github-connect, #github-logout" ).on "click", ->
+    $( ".github-connect, #github-logout" ).on "click", ( e ) ->
+      
+      e.preventDefault()
+      smoke.alert "We are experiencing some difficulty connecting to Github. Please try again later."
+      
+      
       $(@).addClass "githubStateChange"
       
     $( "body" ).on "click", ".user-gist", ( e ) ->

@@ -149,9 +149,8 @@ window.APP =
 
     $( ".github-connect, #github-logout" ).on "click", ( e ) ->
       
-      e.preventDefault()
-      smoke.alert "We are experiencing some difficulty connecting to Github. Please try again later."
-      
+      # e.preventDefault()
+      # smoke.alert "We are experiencing some difficulty connecting to Github. Please try again later."
       
       $(@).addClass "githubStateChange"
       

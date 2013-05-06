@@ -7,7 +7,6 @@ https = require("https")
 GitHubApi = require("github")
 everyauth = require("everyauth")
 user = require("./routes/user")
-github = require("./routes/github")
 conf = require("./conf")
 
 class App
@@ -43,6 +42,10 @@ class App
       .appSecret(conf.github.appSecret)
       .scope("gist")
       .findOrCreateUser((sess, accessToken, accessTokenExtra, ghUser) =>
+        console.log "sess: #{sess}"
+        console.log "accessToken: #{accessToken}"
+        console.log "accessTokenExtra: #{accessTokenExtra}"
+        console.log "ghUser: #{ghUser}"
         @github.authenticate
           type: "oauth"
           token: accessToken

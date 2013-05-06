@@ -1,6 +1,6 @@
 {
   "name": "Stuntman",
-  "version": "0.0.1-14",
+  "version": "0.0.1-18",
   "private": true,
   "scripts": {
     "predeploy": "grunt",
@@ -11,7 +11,7 @@
     "jade": "*",
     "stylus": "*",
     "github": "~0.1.8",
-    "everyauth": "git://github.com/disorderdev/everyauth.git#express3",
+    "everyauth": "git://github.com/robtarr/everyauth.git#express3",
     "connect-redis": "~1.4.5",
     "connect": "~2.7.3",
     "mocha": "1.8.x"

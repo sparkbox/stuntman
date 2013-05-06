@@ -57,8 +57,8 @@ window.APP =
       theme: "monokai"
       lineNumbers: true
         
-    tests = localStorage["tests"] || "describe('jsTesting', function() {\n  it(\"should pass\", function() {\n    expect( true ).toBe( true );\n  })\n});"
-    src = localStorage["src"] || "function myScript(){return 100;}\n"
+    tests = localStorage["tests"] || "describe \"Stuntman\", ->\n  it \"should jump buses\", ->\n    expect(jumpingBuses()).toBe \"awesome!\""
+    src = localStorage["src"] || "window.jumpingBuses = ->\n  \"awesome!\""
     
     APP.testMirror = CodeMirror document.getElementById( "tests" ),
       $.extend(
@@ -73,7 +73,9 @@ window.APP =
         cmOptions,
         value: src
       )
-
+    APP.codeChange( "tests", APP.testMirror )
+    APP.codeChange( "src", APP.srcMirror )
+    
   resizeEditors: ->
     if $( "#source" ).position()
       $( "#source, #tests" ).height( $( window ).height() - $( "#source" ).position().top + "px");

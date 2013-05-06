@@ -39,7 +39,7 @@ header {
   
   @include sbmq($control-collapse-width) {
     height: 100%;
-    @include rem(width, 35);
+    @include rem(width, 36);
   }
 }
 .controlPanel-iconButton {

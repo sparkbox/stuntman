@@ -646,12 +646,7 @@ button.cancel {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_modal\.scss}line{font-family:\000035}}
 .usersGists a {
-  color: #333;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_modal\.scss}line{font-family:\000038}}
-.usersGists time {
-  font-size: 9.6px;
-  font-size: 0.6rem;
+  color: #ccc;
 }
 
 /* BASICS */

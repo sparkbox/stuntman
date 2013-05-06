@@ -1,6 +1,6 @@
 {
   "name": "Stuntman",
-  "version": "0.0.1-3",
+  "version": "0.0.1-6",
   "private": true,
   "scripts": {
     "predeploy": "grunt",

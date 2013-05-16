@@ -1,0 +1,5 @@
+module.exports =
+  salt: "some value here to use for hashing"
+  github:
+    appId: "GitHub App ID"
+    appSecret: "GitHub App Secret"

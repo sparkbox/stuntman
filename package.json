@@ -1,6 +1,6 @@
 {
   "name": "Stuntman",
-  "version": "0.0.1-18",
+  "version": "0.0.1-19",
   "private": true,
   "scripts": {
     "predeploy": "grunt",
@@ -31,7 +31,8 @@
     "jsdom": "~0.5.5",
     "expect.js": "~0.2.0",
     "grunt-mocha-cli": "~1.0.2",
-    "coffee-script": "1.4.x"
+    "coffee-script": "1.4.x",
+    "grunt-plato": "~0.2.0"
   },
   "env": {
     "CXX": "/opt/local/bin/g++ -m64",

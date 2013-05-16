@@ -70,6 +70,13 @@ module.exports = (grunt) ->
       javascript: "src/server/public/js/*"
       sourcemaps: ["src/server/public/scss", "src/server/public/coffee", "src/server/public/js/stuntman.map"]
       
+      
+    plato:
+      check:
+        files:
+          'reports/js-complexity': ['**/*.js']
+      
+      
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-compass"
@@ -78,6 +85,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-mocha-cli"
+  grunt.loadNpmTasks "grunt-plato"
 
   # Clean, compile and concatenate JS
   grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli" ]

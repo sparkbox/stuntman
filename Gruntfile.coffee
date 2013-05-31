@@ -61,9 +61,14 @@ module.exports = (grunt) ->
         ui: "tdd"
       all: ["specs/server/*Spec.coffee"]
 
-    exec:
-      copyCoffee:
-        command: "mkdir -p public/coffee; cp -R src/client/coffee/ public/coffee/"
+    copy:
+      coffee:
+        files: [
+          expand: true
+          cwd: "src/client"
+          src: ["coffee/*.*"]
+          dest: "public"
+        ]
 
     clean:
       stylesheets: "src/server/public/css/*"
@@ -83,12 +88,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
-  grunt.loadNpmTasks "grunt-exec"
+  grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-mocha-cli"
   grunt.loadNpmTasks "grunt-plato"
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli" ]
+  grunt.registerTask "coffeescript", [ "copy:coffee", "coffee", "concat:js", "mochacli" ]
   grunt.registerTask 'test', ['mochacli']
 
   # Clean and compile stylesheets

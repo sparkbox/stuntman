@@ -14,7 +14,8 @@
     "everyauth": "git://github.com/robtarr/everyauth.git#express3",
     "connect-redis": "~1.4.5",
     "connect": "~2.7.3",
-    "mocha": "1.8.x"
+    "mocha": "1.8.x",
+    "grunt": "0.4.x"
   },
   "devDependencies": {
     "node-jade-compress": "0.0.15",

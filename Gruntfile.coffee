@@ -9,7 +9,7 @@ module.exports = (grunt) ->
       grunt:
         files: ["Gruntfile.coffee", "package.json"]
         tasks: "default"
-      
+
       stylesheets:
         files: "src/client/scss/*.*"
         tasks: "stylesheets"
@@ -40,7 +40,7 @@ module.exports = (grunt) ->
       js:
         src: ["src/client/js/libs/*.js", "src/client/js/libs/cm-modes/**/*.js"]
         dest: "src/server/public/js/libs.js"
-          
+
     uglify:
       dev:
         options:
@@ -69,14 +69,14 @@ module.exports = (grunt) ->
       stylesheets: "src/server/public/css/*"
       javascript: "src/server/public/js/*"
       sourcemaps: ["src/server/public/scss", "src/server/public/coffee", "src/server/public/js/stuntman.map"]
-      
-      
+
+
     plato:
       check:
         files:
           'reports/js-complexity': ['**/*.js']
-      
-      
+
+
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-compass"
@@ -90,12 +90,14 @@ module.exports = (grunt) ->
   # Clean, compile and concatenate JS
   grunt.registerTask "coffeescript", [ "exec:copyCoffee", "coffee", "concat:js", "mochacli" ]
   grunt.registerTask 'test', ['mochacli']
-  
+
   # Clean and compile stylesheets
   grunt.registerTask "stylesheets", [ "compass" ]
 
   # Production build
   grunt.registerTask "production", [ "default", "clean:sourcemaps" ]
-  
+
   # Default task
   grunt.registerTask "default", [ "coffeescript", "stylesheets" ]
+
+  grunt.registerTask("heroku", "default");

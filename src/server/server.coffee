@@ -16,21 +16,21 @@ class App
     @usersByGhId = {}
     @nextUserId = 0
     @github = new GitHubApi(version: "3.0.0")
-    
-    
+
+
   addUser: (source, sourceUser) ->
     user = @usersById[++@nextUserId] = id: @nextUserId
     user[source] = sourceUser
 
     return user
-    
+
   createGist: (data) =>
     console.log data
     @github.gists.create data, (e, res) ->
       console.log e
       console.log res
 
-  
+
   init: =>
     everyauth.everymodule.findUserById (id, callback) =>
       callback null, @usersById[id]
@@ -42,32 +42,12 @@ class App
       .appSecret(conf.github.appSecret)
       .scope("gist")
       .findOrCreateUser((sess, accessToken, accessTokenExtra, ghUser) =>
-        console.log "sess: #{sess}"
-        console.log "accessToken: #{accessToken}"
-        console.log "accessTokenExtra: #{accessTokenExtra}"
-        console.log "ghUser: #{ghUser}"
         @github.authenticate
           type: "oauth"
           token: accessToken
-          
+
         @usersByGhId[ghUser.id] or (@usersByGhId[ghUser.id] = @addUser("github", ghUser)))
       .redirectPath "/"
-
-    # RedisSessionStore ?= require('connect-redis')(express)
-    # redisSessionStore ?= new RedisSessionStore(
-    #     host: appConfig.databaseRedis.host
-    #     port: appConfig.databaseRedis.port
-    #     db: appConfig.databaseRedis.username
-    #     pass: appConfig.databaseRedis.password
-    #     no_ready_check: true
-    #     ttl: 60*60  # hour
-    # )
-    # server.use express.session({
-    #     secret: appConfig.site.salt
-    #     cookie: maxAge: 1000*60*60
-    #     store: redisSessionStore
-    # })
-
 
     app = express()
     app.configure =>
@@ -75,15 +55,15 @@ class App
       app.set "view engine", "jade"
       app.use express.bodyParser()
       app.use express.cookieParser()
-      app.use express.session(secret: conf.redis.secret)
+      app.use express.session(secret: conf.session.secret)
       app.use everyauth.middleware(app)
       app.use express.methodOverride()
       app.use app.router
       app.use express.static(__dirname + "/public")
-      
+
     app.get "/", (req, res) ->
       res.render "index"
-            
+
     app.post "/creategist", (req, res) =>
       @createGist req.body
 

@@ -3,3 +3,5 @@ module.exports =
   github:
     appId: "GitHub App ID"
     appSecret: "GitHub App Secret"
+  session:
+    secret: "session secret"

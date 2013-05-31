@@ -31,26 +31,26 @@ body {
   @include rem( min-height, 3.5 );
   padding-top: 10px;
   width: 100%;
-  
+
   > div {
     float: left;
     width: 50%;
     position: relative;
   }
-  
+
   span {
     float: left;
     @include rem( width, 3.2 );
     @include rem( font-size, .6 );
     @include rem( padding, .4 );
   }
-  
+
   %display {
     @include rem( font-size, 2 );
     float: left;
     margin: 0;
     font-weight: bold;
-    
+
     &+output {
       @include rem( font-size, .1 );
       @include rem( padding-top, .4 );
@@ -64,24 +64,24 @@ body {
       right: 0;
     }
   }
-  
+
   .num-failures {
     @extend %display;
     color: $failed;
-    
+
     &+output {
-      color: $failed;  
+      color: $failed;
     }
   }
   .num-passes {
     @extend %display;
     color: $passed;
-    
+
     &+output {
       color: $passed;
     }
   }
-  
+
   .errorList {
     float: left;
     list-style: none;
@@ -90,29 +90,29 @@ body {
     overflow: hidden;
     position: relative;
     padding-left: 10px;
-    
+
     li {
       padding: 10px 10px 10px;
       border-bottom: 1px solid #000;
-      
+
       &:first-child {
         padding-top: 0;
       }
     }
-    
+
     p {
       color: $failed;
     }
-    
+
     &.show-more {
-    
+
       &:before {
         content: "\e002";
         color: #888;
         position: absolute;
         left: 0;
         @include rem( top, .5 );
-        
+
         font-family: 'icomoon';
         speak: none;
         font-style: normal;
@@ -124,41 +124,41 @@ body {
         @include transition-property(transform);
         @include transition-duration(.25s);
       }
-    
+
       &:hover {
         display: block;
         overflow: visible;
         position: relative;
         z-index: 10;
-        
+
         li {
           background: $results-background;
-          
+
           &:last-child {
             border-radius: 0 0 5px 5px;
           }
         }
-        
+
         &:before {
           @include rotateZ(90deg);
         }
       }
     }
   }
-  
+
   h2 {
     margin: 0;
     @include rem( font-size, 1 );
   }
-  
+
   p {
     margin: 0;
     @include rem( font-size, .8 );
   }
-  
+
   .compilationError {
     padding: 5px 10px;
-    
+
     p {
       display: block;
     }
@@ -170,8 +170,8 @@ body {
       color: $failed;
     }
   }
-  
-  @include sbmq( 52em ) {
+
+  @include sb-media( 52em ) {
     > div {
       width: 20%;
     }
@@ -190,7 +190,7 @@ body {
 .tests, .source {
   float: left;
   width: 100%;
-  
+
   h2 {
     background: $editor-title-background;
     color: $editor-title-text;
@@ -201,11 +201,11 @@ body {
   }
 }
 
-@include sbmq( 60em ) {
+@include sb-media( 60em ) {
   .tests, .source {
     width: 50%;
   }
-  
+
   .tests {
     border-right: 1px solid $editor-border;
   }

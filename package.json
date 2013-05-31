@@ -24,9 +24,7 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-mocha-cli": "~1.0.2",
-    "grunt-plato": "~0.2.0"
-  },
-  "devDependencies": {
+    "grunt-plato": "~0.2.0",
     "node-jade-compress": "0.0.15",
     "grunt": "0.4.x",
     "grunt-jasmine": "~0.1.0",

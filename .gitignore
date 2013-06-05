@@ -11,7 +11,7 @@ src/server/public/scss/*
 reports/*
 
 # Ignore th econf file so we don't push API keys to GitHub
-src/server/conf.coffee
+# src/server/conf.coffee
 
 # We don't want to check in packages
 node_modules/*

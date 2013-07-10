@@ -67,7 +67,7 @@ class App
     app.post "/creategist", (req, res) =>
       @createGist req.body
 
-    app.listen 3030
+    app.listen(process.env.PORT || 3030)
     @express = app
 
 app = new App()

@@ -44,6 +44,6 @@
     "node": "0.8.x"
   },
   "scripts": {
-    "postinstall": "bundle; ./node_modules/grunt/bin/grunt heroku"
+    "postinstall": "ls -al; ./node_modules/grunt/bin/grunt heroku; cd ./node_modules/grunt/bin; ls -al"
   }
 }

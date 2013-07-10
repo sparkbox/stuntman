@@ -105,4 +105,4 @@ module.exports = (grunt) ->
   # Default task
   grunt.registerTask "default", [ "coffeescript", "stylesheets" ]
 
-  grunt.registerTask("heroku", "default");
+  grunt.registerTask "heroku", [ "default" ]

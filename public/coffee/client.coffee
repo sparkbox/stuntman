@@ -123,7 +123,9 @@ window.APP =
       url: "https://api.github.com/users/#{APP.githubUser}/gists"
       success: ( data ) ->
         APP.gists = APP.sortGists data
-        smoke.alert( APP.gistsTpl( APP.gists ), ok: "Cancel" )
+
+        smoke.alert( APP.gistsTpl( APP.gists ), ok: "Cancel" ) if APP.gists? and APP.gists.length > 0
+        smoke.alert( APP.noGistsTpl(), ok: "Cancel" )
   
   sortGists: ( data ) ->
     data.filter ( gist ) -> gist if gist.files['source.coffee'] and gist.files['test.coffee'] 

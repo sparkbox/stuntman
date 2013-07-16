@@ -1,4 +1,4 @@
-$control-collapse-width: 50em;
+$control-collapse-width: 40em;
 
 header {
   background: $header-background;
@@ -36,11 +36,6 @@ header {
 
 .controlPanel {
   float: right;
-
-  @include sb-media($control-collapse-width) {
-    height: 100%;
-    @include rem(width, 36);
-  }
 }
 .controlPanel-iconButton {
   -webkit-appearance: none;
@@ -66,15 +61,21 @@ header {
     background: none;
     position: relative;
     width: auto;
-    padding-top: 20px;
+    padding-top: 8px;
+    text-align: right;
   }
 }
 
 .languageControls-label {
   @include rem(font-size, .8);
+  @include sb-media($control-collapse-width) {
+    display: block;
+    padding-bottom: 6px;
+  }
 }
 .languageControls-option {
   @include rem(font-size, .8);
+  @include rem(width, 6);
   margin: 0 20px 0 5px;
 }
 

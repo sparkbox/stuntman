@@ -5,7 +5,7 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000321}}
 article,
 aside,
 details,
@@ -23,7 +23,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000331}}
 audio,
 canvas,
 video {
@@ -34,7 +34,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000340}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -43,7 +43,7 @@ audio:not([controls]) {
 /*
  * Addresses styling for `hidden` attribute not present in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000349}}
 [hidden] {
   display: none;
 }
@@ -56,7 +56,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000363}}
 html {
   font-family: sans-serif;
   /* 1 */
@@ -69,7 +69,7 @@ html {
 /*
  * Removes default margin.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000373}}
 body {
   margin: 0;
 }
@@ -80,7 +80,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000385}}
 a:focus {
   outline: thin dotted;
 }
@@ -88,7 +88,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\0000394}}
 a:active,
 a:hover {
   outline: 0;
@@ -101,7 +101,7 @@ a:hover {
  * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
  * Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003107}}
 h1 {
   font-size: 2em;
 }
@@ -109,7 +109,7 @@ h1 {
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003115}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -117,7 +117,7 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003124}}
 b,
 strong {
   font-weight: bold;
@@ -126,7 +126,7 @@ strong {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003132}}
 dfn {
   font-style: italic;
 }
@@ -134,7 +134,7 @@ dfn {
 /*
  * Addresses styling not present in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003140}}
 mark {
   background: #ff0;
   color: #000;
@@ -143,7 +143,7 @@ mark {
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003153}}
 code,
 kbd,
 pre,
@@ -155,7 +155,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003162}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -165,7 +165,7 @@ pre {
 /*
  * Sets consistent quote types.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003172}}
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -173,7 +173,7 @@ q {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003180}}
 small {
   font-size: 80%;
 }
@@ -181,7 +181,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003189}}
 sub,
 sup {
   font-size: 75%;
@@ -190,12 +190,12 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003196}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003200}}
 sub {
   bottom: -0.25em;
 }
@@ -206,7 +206,7 @@ sub {
 /*
  * Removes border when inside `a` element in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003212}}
 img {
   border: 0;
 }
@@ -214,7 +214,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003220}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -225,7 +225,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 8/9 and Safari 5.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003232}}
 figure {
   margin: 0;
 }
@@ -236,7 +236,7 @@ figure {
 /*
  * Define consistent border, margin, and padding.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003244}}
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -247,7 +247,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003255}}
 legend {
   border: 0;
   /* 1 */
@@ -260,7 +260,7 @@ legend {
  * 2. Corrects font size not being inherited in all browsers.
  * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003269}}
 button,
 input,
 select,
@@ -277,7 +277,7 @@ textarea {
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003281}}
 button,
 input {
   line-height: normal;
@@ -290,7 +290,7 @@ input {
  * 3. Improves usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003296}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -304,7 +304,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003306}}
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -314,7 +314,7 @@ input[disabled] {
  * 1. Addresses box sizing set to `content-box` in IE 8/9.
  * 2. Removes excess padding in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003316}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -328,7 +328,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003327}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -342,7 +342,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003340}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -351,7 +351,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 4+.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003349}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -362,7 +362,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003359}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -376,7 +376,7 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_normalize\.scss}line{font-family:\00003372}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -391,7 +391,7 @@ table {
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000313}}
 [data-icon]:before {
   font-family: 'icomoon';
   content: attr(data-icon);
@@ -409,7 +409,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000330}}
 .icon-github, .icon-cloud-upload, .icon-cloud-download, .icon-exit, .icon-plus-alt, .icon-menu {
   font-family: 'icomoon';
   speak: none;
@@ -421,37 +421,37 @@ you can use the generic selector below, but it's slower:
   -webkit-font-smoothing: antialiased;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000340}}
 .icon-github:before {
   content: "\e000";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000343}}
 .icon-cloud-upload:before {
   content: "\e003";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000346}}
 .icon-cloud-download:before {
   content: "\e004";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000349}}
 .icon-exit:before {
   content: "\e001";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000352}}
 .icon-plus-alt:before {
   content: "\e002";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_icon-fonts\.scss}line{font-family:\0000355}}
 .icon-menu:before {
   content: "\e005";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\000031}}
 .smoke-base {
   position: fixed;
   top: 0;
@@ -466,13 +466,13 @@ you can use the generic selector below, but it's slower:
   transition: all .3s;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000315}}
 .smoke-base.smoke-visible {
   opacity: 1;
   visibility: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000320}}
 .smokebg {
   position: fixed;
   top: 0;
@@ -481,23 +481,23 @@ you can use the generic selector below, but it's slower:
   right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000328}}
 .smoke-base .dialog {
   position: absolute;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000332}}
 .dialog-prompt {
   margin-top: 5px;
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000337}}
 .dialog-buttons {
   margin: 10px 0 5px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000341}}
 .smoke {
   font-family: sans-serif;
   font-weight: bold;
@@ -506,7 +506,7 @@ you can use the generic selector below, but it's slower:
   line-height: 130%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000349}}
 .dialog-buttons button {
   display: inline-block;
   vertical-align: baseline;
@@ -524,7 +524,7 @@ you can use the generic selector below, but it's slower:
   padding: 9px 12px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000366}}
 .dialog-prompt input {
   margin: 0;
   border: 0;
@@ -537,32 +537,32 @@ you can use the generic selector below, but it's slower:
   padding: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000378}}
 .smoke-base {
   background: rgba(0, 0, 0, 0.3);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#90000000,endColorstr=#900000000);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000383}}
 .smoke-base .dialog {
   top: 25%;
   left: 25%;
   width: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000389}}
 .smoke-base .dialog-inner {
   padding: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000393}}
 .smoke {
   text-transform: uppercase;
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#ffffff);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\0000399}}
 .dialog-buttons button {
   border-radius: 5px;
   text-transform: uppercase;
@@ -571,35 +571,35 @@ you can use the generic selector below, but it's slower:
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\00003107}}
 button.cancel {
   background-color: rgba(0, 0, 0, 0.7);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#444444,endColorstr=#444444);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke\.scss}line{font-family:\00003112}}
 .queue {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\000031}}
 .smoke-base {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\000035}}
 .smoke-base .dialog {
   top: 25%;
   left: 30%;
   width: 40%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000311}}
 .smoke-base .dialog-inner {
   padding: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000315}}
 .smoke {
   text-transform: none;
   color: #eee;
@@ -610,12 +610,12 @@ button.cancel {
   font-size: 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000324}}
 .dialog-buttons {
   margin: 5px 0 5px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000328}}
 .dialog-buttons button {
   border-radius: 3px;
   text-transform: uppercase;
@@ -626,13 +626,13 @@ button.cancel {
   border: 1px solid #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000338}}
 button.cancel {
   background-color: #999;
   color: #222222;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_smoke-dark\.scss}line{font-family:\0000343}}
 .dialog-prompt input {
   width: 300px;
   text-align: center;
@@ -640,46 +640,46 @@ button.cancel {
 }
 
 /* BASICS */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\000033}}
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   font-family: monospace;
   height: 300px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\000038}}
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
   overflow: auto;
 }
 
 /* PADDING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000315}}
 .CodeMirror-lines {
   padding: 4px 0;
   /* Vertical padding around content */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000318}}
 .CodeMirror pre {
   padding: 0 4px;
   /* Horizontal padding of content */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000322}}
 .CodeMirror-scrollbar-filler {
   background-color: white;
   /* The little square between H and V scrollbars */
 }
 
 /* GUTTER */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000328}}
 .CodeMirror-gutters {
   border-right: 1px solid #ddd;
   background-color: #f7f7f7;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000333}}
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -688,18 +688,18 @@ button.cancel {
 }
 
 /* CURSOR */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000342}}
 .CodeMirror div.CodeMirror-cursor {
   border-left: 1px solid black;
 }
 
 /* Shown when moving in bi-directional text */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000346}}
 .CodeMirror div.CodeMirror-secondarycursor {
   border-left: 1px solid silver;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000349}}
 .CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
   width: auto;
   border: 0;
@@ -710,157 +710,157 @@ button.cancel {
 /* Kludge to turn off filter in ie9+, which also accepts rgba */
 /* Can style cursor different in overwrite (non-insert) mode */
 /* DEFAULT THEME */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000365}}
 .cm-s-default .cm-keyword {
   color: #708;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000366}}
 .cm-s-default .cm-atom {
   color: #219;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000367}}
 .cm-s-default .cm-number {
   color: #164;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000368}}
 .cm-s-default .cm-def {
   color: #00f;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000369}}
 .cm-s-default .cm-variable {
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000370}}
 .cm-s-default .cm-variable-2 {
   color: #05a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000371}}
 .cm-s-default .cm-variable-3 {
   color: #085;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000372}}
 .cm-s-default .cm-property {
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000373}}
 .cm-s-default .cm-operator {
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000374}}
 .cm-s-default .cm-comment {
   color: #a50;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000375}}
 .cm-s-default .cm-string {
   color: #a11;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000376}}
 .cm-s-default .cm-string-2 {
   color: #f50;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000377}}
 .cm-s-default .cm-meta {
   color: #555;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000378}}
 .cm-s-default .cm-error {
   color: #f00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000379}}
 .cm-s-default .cm-qualifier {
   color: #555;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000380}}
 .cm-s-default .cm-builtin {
   color: #30a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000381}}
 .cm-s-default .cm-bracket {
   color: #997;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000382}}
 .cm-s-default .cm-tag {
   color: #170;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000383}}
 .cm-s-default .cm-attribute {
   color: #00c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000384}}
 .cm-s-default .cm-header {
   color: blue;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000385}}
 .cm-s-default .cm-quote {
   color: #090;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000386}}
 .cm-s-default .cm-hr {
   color: #999;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000387}}
 .cm-s-default .cm-link {
   color: #00c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000389}}
 .cm-negative {
   color: #d44;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000390}}
 .cm-positive {
   color: #292;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000391}}
 .cm-header, .cm-strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000392}}
 .cm-em {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000393}}
 .cm-link {
   text-decoration: underline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000395}}
 .cm-invalidchar {
   color: #f00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000397}}
 div.CodeMirror span.CodeMirror-matchingbracket {
   color: #0f0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\0000398}}
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #f22;
 }
@@ -868,14 +868,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* STOP */
 /* The rest of this file contains styles related to the mechanics of
    the editor. You probably shouldn't touch them. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003105}}
 .CodeMirror {
   line-height: 1;
   position: relative;
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003111}}
 .CodeMirror-scroll {
   /* 30px is the magic margin used to hide the element's real scrollbars */
   /* See overflow: hidden in .CodeMirror, and the paddings in .CodeMirror-sizer */
@@ -889,7 +889,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003120}}
 .CodeMirror-sizer {
   position: relative;
 }
@@ -897,14 +897,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* The fake, visible scrollbars. Used to force redraw during scrolling
    before actuall scrolling happens, thus preventing shaking and
    flickering artifacts. */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003127}}
 .CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler {
   position: absolute;
   z-index: 6;
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003132}}
 .CodeMirror-vscrollbar {
   right: 0;
   top: 0;
@@ -912,7 +912,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-y: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003137}}
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;
@@ -920,14 +920,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-x: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003142}}
 .CodeMirror-scrollbar-filler {
   right: 0;
   bottom: 0;
   z-index: 6;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003147}}
 .CodeMirror-gutters {
   position: absolute;
   left: 0;
@@ -937,7 +937,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 3;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003153}}
 .CodeMirror-gutter {
   height: 100%;
   display: inline-block;
@@ -946,19 +946,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   *display: inline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003160}}
 .CodeMirror-gutter-elt {
   position: absolute;
   cursor: default;
   z-index: 4;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003166}}
 .CodeMirror-lines {
   cursor: text;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003169}}
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
   -moz-border-radius: 0;
@@ -979,14 +979,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003185}}
 .CodeMirror-wrap pre {
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003190}}
 .CodeMirror-linebackground {
   position: absolute;
   left: 0;
@@ -996,24 +996,24 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003196}}
 .CodeMirror-linewidget {
   position: relative;
   z-index: 2;
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003202}}
 .CodeMirror-widget {
   display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003206}}
 .CodeMirror-wrap .CodeMirror-scroll {
   overflow-x: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003210}}
 .CodeMirror-measure {
   position: absolute;
   width: 100%;
@@ -1022,12 +1022,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003216}}
 .CodeMirror-measure pre {
   position: static;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003218}}
 .CodeMirror div.CodeMirror-cursor {
   position: absolute;
   visibility: hidden;
@@ -1035,135 +1035,135 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003224}}
 .CodeMirror-focused div.CodeMirror-cursor {
   visibility: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003228}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003228}}
 .CodeMirror-selected {
   background: #d9d9d9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003229}}
 .CodeMirror-focused .CodeMirror-selected {
   background: #d7d4f0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003231}}
 .cm-searching {
   background: #ffa;
   background: rgba(255, 255, 0, 0.4);
 }
 
 /* IE7 hack to prevent it from returning funny offsetTops on the spans */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003237}}
 .CodeMirror span {
   *vertical-align: text-bottom;
 }
 
 @media print {
   /* Hide the cursor when printing */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_codemirror\.scss}line{font-family:\00003241}}
   .CodeMirror div.CodeMirror-cursor {
     visibility: hidden;
   }
 }
 /* Based on Sublime Text's Monokai theme */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000033}}
 .cm-s-monokai.CodeMirror {
   background: #272822;
   color: #f8f8f2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000034}}
 .cm-s-monokai div.CodeMirror-selected {
   background: #49483E !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000035}}
 .cm-s-monokai .CodeMirror-gutters {
   background: #272822;
   border-right: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000036}}
 .cm-s-monokai .CodeMirror-linenumber {
   color: #d0d0d0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000037}}
 .cm-s-monokai .CodeMirror-cursor {
   border-left: 1px solid #f8f8f0 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\000039}}
 .cm-s-monokai span.cm-comment {
   color: #75715e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000310}}
 .cm-s-monokai span.cm-atom {
   color: #ae81ff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000311}}
 .cm-s-monokai span.cm-number {
   color: #ae81ff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000313}}
 .cm-s-monokai span.cm-property, .cm-s-monokai span.cm-attribute {
   color: #a6e22e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000314}}
 .cm-s-monokai span.cm-keyword {
   color: #f92672;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000315}}
 .cm-s-monokai span.cm-string {
   color: #e6db74;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000317}}
 .cm-s-monokai span.cm-variable {
   color: #a6e22e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000318}}
 .cm-s-monokai span.cm-variable-2 {
   color: #9effff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000319}}
 .cm-s-monokai span.cm-def {
   color: #fd971f;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000320}}
 .cm-s-monokai span.cm-error {
   background: #f92672;
   color: #f8f8f0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000321}}
 .cm-s-monokai span.cm-bracket {
   color: #f8f8f2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000322}}
 .cm-s-monokai span.cm-tag {
   color: #f92672;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000323}}
 .cm-s-monokai span.cm-link {
   color: #ae81ff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/codemirror\/_monokai\.scss}line{font-family:\0000325}}
 .cm-s-monokai .CodeMirror-matchingbracket {
   text-decoration: underline;
   color: white !important;
@@ -1174,14 +1174,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: device-width;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\000036}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000312}}
 .visuallyHidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1193,30 +1193,30 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: 1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000323}}
 body {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000326}}
 .hidden {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000330}}
 .results {
   min-height: 56px;
   min-height: 3.5rem;
   padding-top: 10px;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000335}}
 .results > div {
   float: left;
   width: 50%;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000341}}
 .results span {
   float: left;
   width: 51.2px;
@@ -1226,7 +1226,7 @@ body {
   padding: 6.4px 6.4px 6.4px 6.4px;
   padding: 0.4rem 0.4rem 0.4rem 0.4rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000348}}
 .results .num-failures, .results .num-passes {
   font-size: 32px;
   font-size: 2rem;
@@ -1234,7 +1234,7 @@ body {
   margin: 0;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000354}}
 .results .num-failures + output, .results .num-passes + output {
   font-size: 1.6px;
   font-size: 0.1rem;
@@ -1244,30 +1244,30 @@ body {
   padding-left: 5.8rem;
   min-height: 36.8px;
   min-height: 2.3rem;
-  letter-spacing: -.3em;
+  letter-spacing: -0.3em;
   line-height: 0.7em;
   margin-left: 5px;
   position: absolute;
   width: 100%;
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000368}}
 .results .num-failures {
   color: #da230a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000372}}
 .results .num-failures + output {
   color: #da230a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000376}}
 .results .num-passes {
   color: #128f17;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000380}}
 .results .num-passes + output {
   color: #128f17;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000385}}
 .results .errorList {
   float: left;
   list-style: none;
@@ -1277,20 +1277,20 @@ body {
   position: relative;
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000394}}
 .results .errorList li {
   padding: 10px 10px 10px;
   border-bottom: 1px solid #000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\0000398}}
 .results .errorList li:first-child {
   padding-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003103}}
 .results .errorList p {
   color: #da230a;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003109}}
 .results .errorList.show-more:before {
   content: "\e002";
   color: #888;
@@ -1315,22 +1315,22 @@ body {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003128}}
 .results .errorList.show-more:hover {
   display: block;
   overflow: visible;
   position: relative;
   z-index: 10;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003134}}
 .results .errorList.show-more:hover li {
   background: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003137}}
 .results .errorList.show-more:hover li:last-child {
   border-radius: 0 0 5px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003142}}
 .results .errorList.show-more:hover:before {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -1338,40 +1338,40 @@ body {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003149}}
 .results h2 {
   margin: 0;
   font-size: 16px;
   font-size: 1rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003154}}
 .results p {
   margin: 0;
   font-size: 12.8px;
   font-size: 0.8rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003160}}
 .results > div {
   width: 20%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003166}}
 .CodeMirror {
   height: 100%;
   overflow: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003171}}
 .tests {
   clear: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003175}}
 .tests, .source {
   float: left;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003179}}
 .tests h2, .source h2 {
   background: #272822;
   color: #f8f8f2;
@@ -1382,26 +1382,26 @@ body {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003190}}
 .tests, .source {
   width: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_styles\.scss}line{font-family:\00003194}}
 .tests {
   border-right: 1px solid white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\000034}}
 header {
   background: #222222;
   color: #aaaaaa;
   overflow: hidden;
-  height: 100px;
   position: relative;
+  height: 100px;
   height: 60px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000310}}
 header h1 {
   font-size: 16px;
   font-size: 1rem;
@@ -1414,13 +1414,15 @@ header h1 {
   float: left;
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000322}}
 header .sparkboxLogo {
   background: url(/images/sparkbox-type.png);
   text-indent: -999px;
-  display: inline-block;
+  display: block;
   width: 140px;
   height: 30px;
+  margin: 0px;
+  display: inline-block;
   margin: 6px 13px 6px 6px;
   -webkit-transform: translateY(-15px);
   -moz-transform: translateY(-15px);
@@ -1429,7 +1431,7 @@ header .sparkboxLogo {
   transform: translateY(-15px);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000346}}
 .controlPanel {
   float: right;
   height: 100%;
@@ -1437,7 +1439,7 @@ header .sparkboxLogo {
   width: 35rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000357}}
 .controlPanel-iconButton {
   -webkit-appearance: none;
   background: none;
@@ -1448,58 +1450,61 @@ header .sparkboxLogo {
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000367}}
 .languageControls {
   background: #333333;
   display: inline-block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
   padding: 10px;
   text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   background: none;
   position: relative;
   width: auto;
   padding-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000391}}
 .languageControls-label {
+  display: block;
   font-size: 12.8px;
   font-size: 0.8rem;
+  display: inline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\0000398}}
 .languageControls-option {
   font-size: 12.8px;
   font-size: 0.8rem;
   margin: 0 20px 0 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003103}}
 .githubControls {
   background: #333333;
-  display: inline;
-  padding-right: 20px;
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003110}}
 .githubControls .controlPanel-iconButton {
   display: inline-block;
-  margin-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003113}}
 .githubControls .github-logout {
   margin-left: 8px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003118}}
 .github-connect {
   display: block;
   margin-top: 15px;
+  text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003123}}
 .github-connect:before {
   color: #888888;
   text-decoration: none;
@@ -1507,7 +1512,7 @@ header .sparkboxLogo {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/rob\/projects\/jstesting\/src\/client\/scss\/_header\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrick\/src\/stuntman\/src\/client\/scss\/_header\.scss}line{font-family:\00003131}}
 .avatar {
   float: left;
   height: 60px;

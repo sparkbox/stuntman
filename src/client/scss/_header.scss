@@ -1,10 +1,10 @@
 $control-collapse-width: 50em;
+$small-screen-width: 363px;
 
 header {
   background: $header-background;
   color: $header-text;
   overflow: hidden;
-  height: 100px;
   position: relative;
   
   h1 {
@@ -22,20 +22,32 @@ header {
   .sparkboxLogo {
     background: url(/images/sparkbox-type.png);
     text-indent: -999px;
-    display: inline-block;
+    display: block;
     width: 140px;
     height: 30px;
-    margin: 6px 13px 6px 6px;
+    margin: 0px;
+    @include sbmq($small-screen-width) {
+      display: inline-block;
+      margin: 6px 13px 6px 6px;
+
+    }
     @include transform( translateY(-15px) );
   }
   
+  @include sbmq($small-screen-width) {
+      height: 100px;
+  }
+
   @include sbmq($control-collapse-width) {
     height: 60px;
   }
 }
 
 .controlPanel {
-  float: right;
+
+  @include sbmq($small-screen-width){
+    float: right;
+  }
   
   @include sbmq($control-collapse-width) {
     height: 100%;
@@ -55,12 +67,16 @@ header {
 .languageControls {
   background: $controls-background;
   display: inline-block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
   padding: 10px;
   text-align: left;
+
+  @include sbmq($small-screen-width) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
   
   @include sbmq($control-collapse-width) {
     background: none;
@@ -68,10 +84,16 @@ header {
     width: auto;
     padding-top: 20px;
   }
+  @include sbmq($small-screen-width) {
+  }
 }
 
 .languageControls-label {
+  display: block;
   @include rem(font-size, .8);
+  @include sbmq($small-screen-width) {
+   display: inline; 
+  }
 }
 .languageControls-option {
   @include rem(font-size, .8);
@@ -80,13 +102,13 @@ header {
 
 .githubControls {
   background: $controls-background;
-  display: inline;
-  padding-right: 20px;
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1em;
 
   .controlPanel-iconButton {
     display: inline-block;
-    margin-top: 15px;
   }
   .github-logout {
     margin-left: 8px;
@@ -95,8 +117,8 @@ header {
 
 .github-connect {
   display: block;
-  margin-top: 15px;
-  
+  text-decoration: none;
+
   &:before {
     color: $gist-controls-text;
     text-decoration: none;

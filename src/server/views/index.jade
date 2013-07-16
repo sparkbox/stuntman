@@ -36,7 +36,6 @@ html
             a.github-connect(href='/auth/github', data-icon!='&#xe000;')
               span.visuallyHidden
                 | Connect to Github
-          
           - else
             img.avatar(src='#{everyauth.github.user.avatar_url}')
             button#save-gist.controlPanel-iconButton(title='Save Gist to Github', data-icon!='&#xe003;')

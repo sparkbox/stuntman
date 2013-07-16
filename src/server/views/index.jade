@@ -85,7 +85,9 @@ html
       | {{/each}}
     script#gistsTpl(type='text/x-handlebars-template')
       | <h2>Select a Gist to open</h2><ul class="usersGists">{{#each .}}<li><a class="user-gist" href="#" data-id="{{id}}">{{description}}</a></li>{{/each}}</ul>
-
+    script#noGistsTpl(type='text/x-handlebars-template')
+        <h2>You don't have any Gists to load.</h2>
+        <p>Stuntman is looking for a Gist containing two files: "source.js|coffee" and "test.js|coffee"</p>
 
     script(src="js/libs.js")
     script(src="js/stuntman.js")

@@ -7,6 +7,5 @@ Environment = Ember.Object.extend
   isTest: Ember.computed.equal('name', 'test')
   isDevelopment: Ember.computed.equal('name', 'development')
   isProduction: Ember.computed.equal('name', 'production')
-  firebaseUrl: "https://stuntman.firebaseio.com"
 
 module.exports = Environment.create(window.TAPAS_ENV)

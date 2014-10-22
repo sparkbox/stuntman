@@ -1,6 +1,6 @@
-module.exports = App.UserAddController = Ember.ObjectController.extend
+module.exports = App.IndexController = Ember.ObjectController.extend
 
-  createTest: () ->
+  index: () ->
     newTest = @store.createRecord 'test',
       source: '''
       window.jumpingBuses = ->

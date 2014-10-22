@@ -1,0 +1,22 @@
+<header>
+  <h1><a href="//seesparkbox.com" class="sparkboxLogo">Sparkbox</a>Stuntman</h1>
+  <div class="controlPanel">
+    <form class="languageControls">
+      <label class="languageControls-label">Language:
+        <select id="language" class="languageControls-option">
+          {{!-- <option value="coffeescript">CoffeeScript</option> --}}
+          <option value="javascript">JavaScript</option>
+        </select>
+      </label>
+      <label class="languageControls-label">Test Suite:
+        <select id="runner" class="languageControls-option">
+          <option value="jasmine">Jasmine</option>
+          {{!-- <option value="mocha">Mocha</option>
+          <option value="qunit">QUnit</option> --}}
+        </select>
+      </label>
+    </form>
+  </div>
+</header>
+
+{{outlet}}

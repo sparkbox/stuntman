@@ -1,0 +1,45 @@
+{
+  "name": "tapas-with-ember",
+  "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Ember.vim support.",
+  "author": {
+    "name": "Jeremy Mack",
+    "email": "@mutewinter",
+    "url": "http://twitter.com/mutewinter"
+  },
+  "version": "0.1.0",
+  "homepage": "https://github.com/mutewinter/tapas-with-ember",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mutewinter/tapas-with-ember.git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "start": "cake server",
+    "test": "npm install; bower install; cake build:test && ./node_modules/.bin/testem ci",
+    "test:watch": "./node_modules/.bin/testem"
+  },
+  "dependencies": {
+    "brunch": "=1.7.13",
+    "coffee-script": "~1.7.1",
+    "javascript-brunch": "~1.7.1",
+    "coffee-script-brunch": "~1.8.0",
+    "css-brunch": "~1.7.0",
+    "stylus-brunch": "~1.8.0",
+    "uglify-js-brunch": "~1.7.6",
+    "clean-css-brunch": "~1.7.1",
+    "auto-reload-brunch": "~1.7.1",
+    "ember-handlebars-brunch": "~1.2.0",
+    "semver": "^2.3.0",
+    "adm-zip": "~0.4.4",
+    "github": "^0.2.0",
+    "digest-brunch": "^1.2.1",
+    "bower": "~1.3.7"
+  },
+  "devDependencies": {
+    "qunitjs": "=1.14.0",
+    "sass-brunch": "^1.8.3",
+    "testem": "=0.6.16"
+  }
+}

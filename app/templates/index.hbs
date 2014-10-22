@@ -1,0 +1,50 @@
+<div id="results" class="results"></div>
+<div class="tests">
+  <h2>Tests</h2>
+  <textarea id="tests" class="editor">
+    {{tests}}
+  </textarea>
+</div>
+<div class="source">
+  <h2>Source</h2>
+  <textarea id="source" class="editor">
+    {{source}}
+  </textarea>
+</div>
+<iframe id="testRunner" class="hidden"></iframe>
+<script id="resultsTpl" type="text/x-handlebars-template">
+  <div>
+    <span>Passing Tests:</span>
+    <output class="num-passes">[[stats.passes]]</output>
+    [[#resultGraphic stats.passes]][[/resultGraphic]]
+  </div>
+  <div>
+    <span>Failing Tests:</span>
+    <output class="num-failures">[[stats.failures]]</output>
+    [[#resultGraphic stats.failures]][[/resultGraphic]]
+  </div>
+  <ul class="errorList">
+    [[#each failures]]
+      <li>
+        <h2>[[title]]</h2>
+        <p>[[err.msg]]</p>
+      </li>
+    [[/each]]
+  </ul>
+</script>
+<script id="compilationErrorTpl" type="text/x-handlebars-template">
+  <div class="compilationError">
+    [[{error]]}
+  </div>
+</script>
+<script id="editorErrorTpl" type="text/x-handlebars-template">
+  <p>
+    <span>[[name]]</span>
+    [[message]]
+  </p>
+</script>
+<script id="testSuiteTpl" type="text/x-handlebars-template">
+  [[#each suites]]
+    <option value="[[name]]">[[name]]</option>
+  [[/each]]
+</script>

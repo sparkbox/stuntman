@@ -31,6 +31,11 @@ exports.config =
           "vendor/ember/config/after.coffee"
           "vendor/ember/#{environment}/ember-data.js"
           "vendor/ember/#{environment}/ember-model.js"
+          "vendor/scripts/firebase.js"
+          "vendor/scripts/emberfire.js"
+          "vendor/scripts/codemirror.js"
+          "vendor/scripts/cm-modes/coffeescript/coffeescript.js"
+          "vendor/scripts/cm-modes/javascript/javascript.js"
           # Anything else that depends on Ember
         ]
 

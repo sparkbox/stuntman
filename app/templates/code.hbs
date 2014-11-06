@@ -1,0 +1,34 @@
+<header>
+  <h1><a href="//seesparkbox.com" class="sparkboxLogo">Sparkbox</a>Stuntman</h1>
+  <div class="controlPanel">
+    <form class="languageControls">
+      <label class="languageControls-label">Language:
+        <select id="language" class="languageControls-option">
+          <option value="coffeescript">CoffeeScript</option>
+          <option value="javascript">JavaScript</option>
+        </select>
+      </label>
+      {{!-- <label class="languageControls-label">Test Suite:
+        <select id="runner" class="languageControls-option">
+          <option value="jasmine">Jasmine</option>
+          <option value="mocha">Mocha</option>
+          <option value="qunit">QUnit</option>
+        </select>
+      </label> --}}
+    </form>
+    <div class="githubControls"><a href="/auth/github" data-icon="&#xe000;" class="github-connect"><span class="visuallyHidden">Connect to Github</span></a>
+    </div>
+  </div>
+  <button {{action 'newCode'}}>New</button>
+</header>
+<div id="results" class="results"></div>
+<div class="tests">
+  <h2>Tests</h2>
+  {{code-editor editorID="tests" code='tests' model=model}}
+</div>
+<div class="source">
+  <h2>Source</h2>
+  {{code-editor editorID="source" code='source' model=model}}
+</div>
+<button {{action 'save'}}>Save</button>
+<iframe id="testRunner" class="hidden"></iframe>

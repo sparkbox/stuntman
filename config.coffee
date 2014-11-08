@@ -36,6 +36,9 @@ exports.config =
           "vendor/scripts/codemirror.js"
           "vendor/scripts/cm-modes/coffeescript/coffeescript.js"
           "vendor/scripts/cm-modes/javascript/javascript.js"
+          "vendor/scripts/codemirror.js"
+          "vendor/scripts/jasmine-2.0.2/jasmine.js"
+          "vendor/scripts/jasmine-2.0.2/boot.js"
           # Anything else that depends on Ember
         ]
 

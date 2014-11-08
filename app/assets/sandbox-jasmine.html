@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="scripts/jasmine.js"></script>
+  <script src="scripts/stuntman-reporter.js"></script>
+  <script src="scripts/stuntman-boot.js"></script>
+  <title>Stuntman Jasmine Test Runner</title>
+</head>
+<body>
+  <button id="run">Test</button>
+
+  <script>
+    tests = 'describe("test", function() {\n it("should run tests", function(){\nexpect(true).toBe(false);\n});\n});'
+
+    $('#run').on('click', function() {
+      eval(tests);
+      jasmine.getEnv().execute();
+    });
+  </script>
+
+</body>
+</html>

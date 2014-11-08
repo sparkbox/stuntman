@@ -10,5 +10,4 @@ module.exports = App.CodeController = Ember.ObjectController.extend
 
     save: ->
       console.log 'save record'
-      debugger
       @get('model').save()

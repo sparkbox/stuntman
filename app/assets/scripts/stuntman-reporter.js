@@ -31,6 +31,7 @@ jasmineRequire.StuntmanReporter = function(j$) {
       var seconds = timer.elapsed() / 1000;
 
       window.jasmineResults = results;
+      alert(results);
       console.log(results);
     };
 

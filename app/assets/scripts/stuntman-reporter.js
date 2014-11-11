@@ -16,7 +16,8 @@ jasmineRequire.StuntmanReporter = function(j$) {
           specCount: 0,
           failureCount: 0,
           pendingCount: 0,
-          failedSpecs: []
+          failedSpecs: [],
+          statuses: []
         };
 
     this.jasmineStarted = function() {
@@ -31,8 +32,10 @@ jasmineRequire.StuntmanReporter = function(j$) {
       var seconds = timer.elapsed() / 1000;
 
       window.jasmineResults = results;
-      alert(results);
       console.log(results);
+      console.log(results.statuses);
+      localStorage.removeItem('testResults');
+      localStorage.setItem('testResults', JSON.stringify(results));
     };
 
     this.specDone = function(result) {
@@ -40,16 +43,19 @@ jasmineRequire.StuntmanReporter = function(j$) {
 
       if (result.status == "pending") {
         results.pendingCount++;
+        results.statuses.push('pending');
         return;
       }
 
       if (result.status == "passed") {
+        results.statuses.push('passed');
         return;
       }
 
       if (result.status == "failed") {
         results.failureCount++;
         results.failedSpecs.push(result);
+        results.statuses.push('failed');
       }
     };
 

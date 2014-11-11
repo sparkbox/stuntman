@@ -19,10 +19,18 @@
     <div class="githubControls"><a href="/auth/github" data-icon="&#xe000;" class="github-connect"><span class="visuallyHidden">Connect to Github</span></a>
     </div>
   </div>
-  <button {{action 'newCode'}}>New</button>
 </header>
-<div id="results" class="results"></div>
-<iframe {{bind-attr src=iFrameSrc}}</iframe>
+<div id="results" class="results">
+  {{#each displayList}}
+    {{status this}}
+  {{else}}
+    No results yet
+  {{/each}}
+  <br>
+  Passing: {{totalPassing}}<br>
+  Failing: {{totalFailing}}
+</div>
+<iframe id="specRunner" {{bind-attr src=iFrameSrc}}></iframe>
 <div class="tests">
   <h2>Tests</h2>
   {{code-editor editorID="tests" code='tests' model=model}}

@@ -2,20 +2,40 @@ module.exports = App.CodeController = Ember.ObjectController.extend
 
   testing: false
 
-  iFrameSrc: Ember.computed 'testing', ->
+  init: ->
+    $(window).on 'storage', =>
+      @set('testing', false)
+      @set('results', JSON.parse(localStorage.getItem('testResults')))
+
+  iFrameSrc: Ember.computed('testing', ->
     if @testing
-      "sandbox-jasmine.html"
+      "/sandbox-jasmine.html"
     else
-      "empty"
+      ""
+  ).property('testing')
+
+  totalPassing: Ember.computed('results', ->
+    if @get('results')
+      @get('results').specCount - @get('results').failureCount
+    else
+      '-'
+  ).property('results')
+
+  totalFailing: Ember.computed('results', ->
+    if @get('results')
+      @get('results').failureCount
+    else
+      '-'
+  ).property('results')
+
+  displayList: Ember.computed('results', ->
+    if @get('results')
+      @get('results').statuses
+  ).property('results')
 
   actions:
-    newCode: ->
-      code = @store.createRecord 'code',
-        source: 'new source code'
-        tests: 'new tests'
-
-      code.save()
-
     test: ->
       @get('model').save()
-      # iFrameSrc.set 'sandbox-jasmine.html'
+      localStorage.setItem('tests', @get('tests'))
+      @set 'testing', true
+

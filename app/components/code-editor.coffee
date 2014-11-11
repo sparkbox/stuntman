@@ -17,7 +17,6 @@ App.CodeEditorComponent = Ember.Component.extend
     ).on 'change', (instance) =>
       Ember.run =>
         @set 'value', instance.getValue()
-        debugger
         window[@elementId] = instance.getValue()
 
   ).on('didInsertElement')

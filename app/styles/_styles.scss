@@ -9,6 +9,10 @@
           box-sizing: border-box;
 }
 
+#specRunner {
+  display: none;
+}
+
 .visuallyHidden {
   border: 0;
   clip: rect(0 0 0 0);

@@ -7,16 +7,19 @@ App.CodeEditorComponent = Ember.Component.extend
 
   _initializeEditor: (->
     textarea = document.getElementById(@elementId)
-    @set 'editor', CodeMirror(textarea,
+    editor = CodeMirror(textarea,
       tabSize: 2
       theme: "monokai"
       lineNumbers: true
       mode: ''
       lineWrapping: true
       value: @get('value')
-    ).on 'change', (instance) =>
+    )
+
+    editor.on 'change', (instance) =>
       Ember.run =>
         @set 'value', instance.getValue()
         window[@elementId] = instance.getValue()
 
+    window["#{@get('editorID')}Editor"] = editor
   ).on('didInsertElement')

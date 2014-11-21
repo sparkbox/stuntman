@@ -5,9 +5,20 @@
   <script src="scripts/jasmine.js"></script>
   <script src="scripts/stuntman-reporter.js"></script>
   <script src="scripts/stuntman-boot.js"></script>
+  <script src="scripts/coffee-script.js"></script>
+  <script src="scripts/js2coffee.js"></script>
   <script>
-    eval(localStorage.getItem('tests'));
-    eval(localStorage.getItem('source'));
+    var language = localStorage.getItem('language');
+    var tests = localStorage.getItem('tests');
+    var source = localStorage.getItem('source');
+
+    if(language.toLowerCase() === 'coffeescript') {
+      tests = CoffeeScript.compile(tests, { bare: true});
+      source = CoffeeScript.compile(source, { bare: true});
+    }
+
+    eval(tests);
+    eval(source);
     jasmine.getEnv().execute();
   </script>
   <title>Stuntman Jasmine Test Runner</title>

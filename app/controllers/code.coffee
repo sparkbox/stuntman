@@ -7,9 +7,9 @@ module.exports = App.CodeController = Ember.ObjectController.extend
   convertCode: (->
     if @get('selectedLanguage') is 'CoffeeScript'
       tests = @get('tests')
-      window.testsEditor.setValue(Js2coffee.build(tests))
+      window.testsEditor.setValue(js2coffee.build(tests))
       source = @get('source')
-      window.sourceEditor.setValue(Js2coffee.build(source))
+      window.sourceEditor.setValue(js2coffee.build(source))
     if @get('selectedLanguage') is 'JavaScript'
       tests = @get('tests')
       window.testsEditor.setValue(CoffeeScript.compile(tests,
@@ -56,7 +56,6 @@ module.exports = App.CodeController = Ember.ObjectController.extend
   actions:
     test: ->
       @get('model').save()
-      debugger
       localStorage.setItem('language', @get('selectedLanguage'))
       localStorage.setItem('tests', @get('tests'))
       localStorage.setItem('source', @get('source'))

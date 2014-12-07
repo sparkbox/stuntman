@@ -26,7 +26,7 @@ header {
     width: 140px;
     height: 30px;
     margin: 0 13px 0 0;
-    @include transform( translateY(-15px) );
+    // @include transform( translateY(-15px) );
   }
 
   @include sb-media($control-collapse-width) {
@@ -112,7 +112,7 @@ header {
 }
 
 .githubStateChange:before {
-  @include transition(color, .5s);
+  // @include transition(color, .5s);
   color: #222;
 }
 

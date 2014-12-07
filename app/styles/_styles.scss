@@ -125,8 +125,8 @@ body {
         text-transform: none;
         line-height: 1;
         -webkit-font-smoothing: antialiased;
-        @include transition-property(transform);
-        @include transition-duration(.25s);
+        // @include transition-property(transform);
+        // @include transition-duration(.25s);
       }
 
       &:hover {
@@ -144,7 +144,7 @@ body {
         }
 
         &:before {
-          @include rotateZ(90deg);
+          // @include rotateZ(90deg);
         }
       }
     }

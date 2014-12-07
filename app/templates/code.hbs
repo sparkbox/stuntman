@@ -3,7 +3,7 @@
   <div class="controlPanel">
     <form class="languageControls">
       <label class="languageControls-label">Language:
-        {{view "select"
+        {{view "Ember.Select"
           content=languageOptions
           value=selectedLanguage
         }}
@@ -13,6 +13,7 @@
     </div>
   </div>
 </header>
+
 <button {{action 'test'}}>Jump</button>
 <div id="results" class="results">
   {{#each displayList}}

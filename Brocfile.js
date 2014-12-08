@@ -17,6 +17,8 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 app.import('bower_components/codemirror/lib/codemirror.js');
+app.import('bower_components/codemirror/mode/coffeescript/coffeescript.js');
+app.import('bower_components/codemirror/mode/javascript/javascript.js');
 app.import('bower_components/coffeescript/extras/coffee-script.js');
 app.import('vendor/js2coffee.js');
 

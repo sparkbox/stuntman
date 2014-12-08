@@ -22,9 +22,9 @@ CodeEditorComponent = Ember.Component.extend
       Ember.run =>
         @set 'value', instance.getValue()
         window[@elementId] = instance.getValue()
+        @get('model').save()
 
     window["#{@get('editorID')}Editor"] = editor
-    console.log "CodeMirror: ", "#{@get('editorID')}Editor", window["#{@get('editorID')}Editor"]
 
   ).on('didInsertElement')
 

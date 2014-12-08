@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
-CodeController = Ember.Controller.extend
+CodeController = Ember.ObjectController.extend
 
   selectedLanguage: null
   testing: false
@@ -9,6 +9,7 @@ CodeController = Ember.Controller.extend
   convertCode: (->
     tests = @get('tests')
     source = @get('source')
+    return if tests is undefined or source is undefined
 
     if @get('selectedLanguage') is 'CoffeeScript'
       window.testsEditor.setValue(js2coffee.build(tests))

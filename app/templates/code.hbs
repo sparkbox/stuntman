@@ -9,7 +9,13 @@
         }}
       </label>
     </form>
-    <div class="githubControls"><a href="/auth/github" data-icon="&#xe000;" class="github-connect"><span class="visuallyHidden">Connect to Github</span></a>
+    <button {{action 'login' 'github'}}>Log in with GitHub</button>
+    <div class="githubControls">
+      {{#if session.isAuthenticated}}
+        <a {{ action 'invalidateSession' }}>Logout</a>
+      {{else}}
+        <a {{ action 'authenticateSession' }}>Login</a>
+      {{/if}}
     </div>
   </div>
 </header>

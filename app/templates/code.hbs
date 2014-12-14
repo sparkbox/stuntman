@@ -3,16 +3,23 @@
   <div class="controlPanel">
     <form class="languageControls">
       <label class="languageControls-label">Language:
-        {{view "select"
+        {{view "Ember.Select"
           content=languageOptions
           value=selectedLanguage
         }}
       </label>
     </form>
-    <div class="githubControls"><a href="/auth/github" data-icon="&#xe000;" class="github-connect"><span class="visuallyHidden">Connect to Github</span></a>
+
+    <div class="githubControls">
+      {{#if session.authed}}
+        <a {{ action 'logout' }}>Logout</a>
+      {{else}}
+        <a {{ action 'login' 'github' }}>Login</a>
+      {{/if}}
     </div>
   </div>
 </header>
+
 <button {{action 'test'}}>Jump</button>
 <div id="results" class="results">
   {{#each displayList}}

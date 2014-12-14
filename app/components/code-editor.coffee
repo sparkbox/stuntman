@@ -1,4 +1,6 @@
-App.CodeEditorComponent = Ember.Component.extend
+`import Ember from 'ember'`
+
+CodeEditorComponent = Ember.Component.extend
   init: ->
     @_super()
     Ember.defineProperty(this, 'value',
@@ -20,6 +22,10 @@ App.CodeEditorComponent = Ember.Component.extend
       Ember.run =>
         @set 'value', instance.getValue()
         window[@elementId] = instance.getValue()
+        @get('model').save()
 
     window["#{@get('editorID')}Editor"] = editor
+
   ).on('didInsertElement')
+
+`export default CodeEditorComponent`

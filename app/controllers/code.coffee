@@ -1,25 +1,24 @@
-module.exports = App.CodeController = Ember.ObjectController.extend
+`import Ember from 'ember'`
+
+CodeController = Ember.ObjectController.extend
 
   selectedLanguage: null
   testing: false
   languageOptions: ['CoffeeScript', 'JavaScript']
 
   convertCode: (->
+    tests = @get('tests')
+    source = @get('source')
+    return if tests is undefined or source is undefined
+
     if @get('selectedLanguage') is 'CoffeeScript'
       tests = @get('tests')
       window.testsEditor.setValue(js2coffee.build(tests))
       source = @get('source')
       window.sourceEditor.setValue(js2coffee.build(source))
     if @get('selectedLanguage') is 'JavaScript'
-      tests = @get('tests')
-      window.testsEditor.setValue(CoffeeScript.compile(tests,
-        bare: true
-      ))
-      source = @get('source')
-      window.sourceEditor.setValue(CoffeeScript.compile(source,
-        bare: true
-      ))
-
+      window.testsEditor.setValue(CoffeeScript.compile(tests, bare: true))
+      window.sourceEditor.setValue(CoffeeScript.compile(source, bare: true))
   ).observes('selectedLanguage')
 
   init: ->
@@ -54,6 +53,12 @@ module.exports = App.CodeController = Ember.ObjectController.extend
   ).property('results')
 
   actions:
+    login: ->
+      @get('session').login('github')
+
+    logout: ->
+      @get('session').logout()
+
     test: ->
       @get('model').save()
       localStorage.setItem('language', @get('selectedLanguage'))
@@ -61,3 +66,4 @@ module.exports = App.CodeController = Ember.ObjectController.extend
       localStorage.setItem('source', @get('source'))
       @set 'testing', true
 
+`export default CodeController`

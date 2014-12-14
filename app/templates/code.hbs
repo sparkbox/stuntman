@@ -9,12 +9,12 @@
         }}
       </label>
     </form>
-    <button {{action 'login' 'github'}}>Log in with GitHub</button>
+
     <div class="githubControls">
-      {{#if session.isAuthenticated}}
-        <a {{ action 'invalidateSession' }}>Logout</a>
+      {{#if session.authed}}
+        <a {{ action 'logout' }}>Logout</a>
       {{else}}
-        <a {{ action 'authenticateSession' }}>Login</a>
+        <a {{ action 'login' 'github' }}>Login</a>
       {{/if}}
     </div>
   </div>

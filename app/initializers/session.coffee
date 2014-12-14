@@ -30,20 +30,17 @@ Session =
 
       init: ->
         # on init try to login
-        ref.onAuth((authData) ->
-
-          # Not authenticated
-          if (!authData)
-            @set('authed', false)
-            @set('authData', null)
-            @set('user', null)
-            return false
-
-          # Authenticated
-          @set('authed', true)
-          @set('authData', authData)
-          @afterAuthentication(authData.uid)
-        ).bind(@)
+        `ref.onAuth(function(authData) {
+          if (!authData) {
+            this.set("authed", false);
+            this.set("authData", null);
+            this.set("user", null);
+            return false;
+          }
+          this.set("authed", true);
+          this.set("authData", authData);
+          return this.afterAuthentication(authData.uid);
+        }.bind(this));`
 
       # Call this from your Ember templates
       login: (provider) ->
@@ -66,6 +63,7 @@ Session =
           #   if authData
           # we're good!
           # this will automatically call the on ref.onAuth method inside init()
+        , scope: 'gist'
 
       # Alternative login with redirect (needed for Chrome on iOS)
       _loginWithRedirect: (provider) ->
@@ -75,6 +73,7 @@ Session =
           # else if authData
           # we're good!
           # this will automatically call the on ref.onAuth method inside init()
+        , scope: 'gist'
 
       # Runs after authentication
       # It either sets a new or already exisiting user
@@ -101,9 +100,16 @@ Session =
       createUser: (userId) ->
         @get('store').createRecord('user',
           id: userId
-          provider: @get('authData.provider')
-          name: @get('authData.facebook.displayName') or @get('authData.google.displayName')
-          email: @get('authData.facebook.email') or @get('authData.google.email')
+          name: @get('authData.github.displayName')
+          email: @get('authData.github.email')
+          username: @get('authData.github.username')
+          avatar: @get('authData.cachedUserProfile.avatar_url')
+          token: @get('authData.github.accessToken')
+
+
+          # provider: @get('authData.provider')
+          # name: @get('authData.facebook.displayName') or @get('authData.google.displayName')
+          # email: @get('authData.facebook.email') or @get('authData.google.email')
           created: new Date().getTime()
         ).save().then (user) ->
           # Proceed with the newly create user

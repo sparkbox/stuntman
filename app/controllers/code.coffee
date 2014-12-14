@@ -51,6 +51,12 @@ CodeController = Ember.ObjectController.extend
   ).property('results')
 
   actions:
+    login: ->
+      @get('session').login('github')
+
+    logout: ->
+      @get('session').logout()
+
     test: ->
       @get('model').save()
       localStorage.setItem('language', @get('selectedLanguage'))

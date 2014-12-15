@@ -20,7 +20,8 @@ app.import('bower_components/codemirror/lib/codemirror.js');
 app.import('bower_components/codemirror/mode/coffeescript/coffeescript.js');
 app.import('bower_components/codemirror/mode/javascript/javascript.js');
 app.import('bower_components/coffeescript/extras/coffee-script.js');
-app.import('vendor/js2coffee.js');
+app.import('bower_components/underscore/underscore-min.js');
+app.import('vendor/js/js2coffee.min.js');
 
 module.exports = app.toTree();
 

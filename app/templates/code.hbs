@@ -22,11 +22,15 @@
 
 <button {{action 'test'}}>Jump</button>
 <div id="results" class="results">
-  {{#each displayList}}
-    {{status this}}
+  {{#if displayList}}
+    <img src="img/cycle.png" alt="">
+    <img src="img/ramp.png" alt="">
+    {{#each displayList}}
+      {{status-image this}}
+    {{/each}}
   {{else}}
     No results yet
-  {{/each}}
+  {{/if}}
   <br>
   Passing: {{totalPassing}}<br>
   Failing: {{totalFailing}}

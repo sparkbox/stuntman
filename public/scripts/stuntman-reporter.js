@@ -33,7 +33,6 @@ jasmineRequire.StuntmanReporter = function(j$) {
 
       window.jasmineResults = results;
       console.log(results);
-      console.log(results.statuses);
       localStorage.removeItem('testResults');
       localStorage.setItem('testResults', JSON.stringify(results));
     };

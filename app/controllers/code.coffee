@@ -26,30 +26,29 @@ CodeController = Ember.ObjectController.extend
       @set('testing', false)
       @set('results', JSON.parse(localStorage.getItem('testResults')))
 
-  iFrameSrc: Ember.computed('testing', ->
+  iFrameSrc: Ember.computed( ->
     if @testing
       "/sandbox-jasmine.html"
     else
       ""
   ).property('testing')
 
-  totalPassing: Ember.computed('results', ->
+  totalPassing: Ember.computed( ->
     if @get('results')
       @get('results').specCount - @get('results').failureCount
     else
       '-'
   ).property('results')
 
-  totalFailing: Ember.computed('results', ->
+  totalFailing: Ember.computed( ->
     if @get('results')
       @get('results').failureCount
     else
       '-'
   ).property('results')
 
-  displayList: Ember.computed('results', ->
-    if @get('results')
-      @get('results').statuses
+  displayList: Ember.computed( ->
+    @get('results').statuses if @get('results')
   ).property('results')
 
   actions:
